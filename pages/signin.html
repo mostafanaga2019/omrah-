@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../vendors/css/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/customiconfont.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/sign_rtl.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap&subset=arabic" rel="stylesheet">
+
+
+    <title>Omrah_signin</title>
+</head>
+
+<body data-title="Omrah_signin">
+
+
+    <div class="signup-container">
+        <div class="login-box">
+            <a href="main.html"><div class="right-box clearfix"></div></a>
+            <div class="left-box clearfix">
+                <div class="center">
+                    <h1> تسجيل دخول</h1>
+                    <p>مرحبا بك من جديد <br> فضلا قم بتسجيل الدخول لكي تتمكن من الحجز معنا </p>
+                    <div class="parenterror">
+                        <input onkeyup="emailcheck(this)" onfocus="pholderem(this)" id="uname" class="my_username" type="email" name="email" placeholder="البريد الإلكتروني" />
+                        <span class="errortext">رجاء ادخال البيانات بشكل سليم</span>
+                    </div>
+                    <i id="eyesign" class="fa fa-eye eyesign"></i>
+                    
+                    <div class="parenterror">
+                        <input  onfocus="pholderem(this)" onkeyup="passcheck(this)" id="pass" class="password passpace" type="password" name="pass" placeholder="كلمة المرور أقل عدد أحرف 8" />
+                        <span class="errortext">رجاء ادخال البيانات بشكل سليم</span>
+                    </div>
+                    
+                        <input id="remember" class="my_checkbox clearfix" type="checkbox" name="remember-me" />
+                       
+                    <label for="remember">تذكرني</label>
+                    <a href="resetpass.html">
+                        <p class="forget">نسيت كلمة المرور</p>
+                    </a>
+                    <button onclick="window.location='main1.html';" class="mysignin" type="submit" name="signin-button" disabled>دخول</button>
+                    <p class="or">OR</p>
+                    <div class="my_social clearfix">                        
+                        <a id="gmailog" href="#"><i class="fa fa-google-plus"></i></a>
+                        <a id="facelog" href="#"><i class="icon_facebook"></i></a>
+                    </div>
+                    <div class="account">
+                        <span>لا تملك حساب؟</span><a href="signup.html" class="createAccount">انشاء حساب</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="../resources/js/sign.js"></script>
+
+
+</body>
+
+</html>

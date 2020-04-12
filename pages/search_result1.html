@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../vendors/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/customiconfont.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/mainstyle_ltr.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap&subset=arabic" rel="stylesheet">
+
+    <title>Omrah_search_result</title>
+
+
+
+</head>
+
+<body data-title="Omrah_search_result">
+    
+    <div id="overlaymap">
+        <div class="mapContainer">
+            <span class="closeMap">&times;</span>
+            <div id="map"></div>
+        </div>
+    </div>
+    <header>
+
+   <div class="wrapper">
+            <div class="content clearfix">
+                <div class="currency_language">
+                    <ul class="lang_chose">
+                        <li>
+                            <a href="#" class="choosemain" id="lang_menu">
+
+                                <img class="lang_icon" src="../resources/img/custom_icon.png">
+                                <input id="changing_language" type="text" value="اختر اللغة" readonly />
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="choosemain" id="currency_menu">
+                                <img class="currency_icon" src="../resources/img/custom_icon.png">
+                                <input id="changing_currency" type="text" value="اختر العملة" readonly />
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <div class="language hidden" id="menu_open">
+                            <div class="language_content">
+                                <form>
+                                    <a id="arabic">العربية<img src="../resources/img/lang_icon_small_arabic.svg" /></a>
+                                    <a id="english">English <img src="../resources/img/lang_icon_small_english.svg" /></a>
+                                </form>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="social">
+                        <ul class="">
+                            <li><a href="#"><i class="icon_facebook"></i></a></li>
+                            <li><a href="#"><i class="icon_twitter"></i></a></li>
+                            <li><a href="#"><i class="icon_insta"></i></a></li>
+                            <li><a href="#"><i class="icon_linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon_snap"></i></a></li>
+                            <li><a href="#"><i class="icon_youtube"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="currency hidden" id="menu_currency_open">
+        <div class="currency_content">
+            <form>
+                <div class="clearfix">
+                    <div class="currency_section">
+                        <a data-myval="SAR" onclick="choosecurrency(this)">SAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال سعودي</span></a>
+                        <a data-myval="USD$" onclick="choosecurrency(this)">USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار أمريكي</span></a>
+                        <a data-myval="AUD" onclick="choosecurrency(this)">AUD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار استرالي</span></a>
+                        <a data-myval="CAD" onclick="choosecurrency(this)">CAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار كندي</span></a>
+                        <a data-myval="$S" onclick="choosecurrency(this)">$S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار سنغافوري</span></a>
+                        <a data-myval="FJD" onclick="choosecurrency(this)">FJD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار فيجي</span></a>
+                        <a data-myval="NZD" onclick="choosecurrency(this)">NZD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار نيوزيلندي</span></a>
+                        <a data-myval="NAD" onclick="choosecurrency(this)">NAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار ناميبي</span></a>
+                        <a data-myval="$HK" onclick="choosecurrency(this)">$HK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار هونج كونج</span></a>
+                        <a data-myval="ZAR" onclick="choosecurrency(this)">ZAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>راند جنوب أفريقيا</span></a>
+                        <a data-myval="€ EURO" onclick="choosecurrency(this)">€&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>يورو </span></a>
+                        <a data-myval="GBP " onclick="choosecurrency(this)">£&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>جنيه استرليني</span></a>
+                        <a data-myval=".د.ك" onclick="choosecurrency(this)">.د.ك&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار كويتي</span></a>
+                        <a data-myval="BHD" onclick="choosecurrency(this)">BHD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار بحريني</span></a>
+                        <a data-myval="EGP" onclick="choosecurrency(this)">EGP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>جنية مصري</span></a>
+                    </div>
+
+                    <div class="currency_section">
+
+                        <a data-myval="AED" onclick="choosecurrency(this)">AED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>درهم اماراتي</span></a>
+                        <a data-myval="JOD" onclick="choosecurrency(this)">JOD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار أردني</span></a>
+                        <a data-myval="TL" onclick="choosecurrency(this)">TL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>الليرة التركية</span></a>
+                        <a data-myval="CL$" onclick="choosecurrency(this)">CL$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>بيزو كولومبي</span></a>
+                        <a data-myval="KZT" onclick="choosecurrency(this)">KZT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>تينغ كازاخستاني</span></a>
+                        <a data-myval="RUB" onclick="choosecurrency(this)">RUB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبل روسي</span></a>
+                        <a data-myval="Rp" onclick="choosecurrency(this)">Rp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبية اندونيسي</span></a>
+                        <a data-myval=".RS" onclick="choosecurrency(this)">.RS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبيه هندي</span></a>
+                        <a data-myval="$R" onclick="choosecurrency(this)">$R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال برازيلي</span></a>
+                        <a data-myval="OMR" onclick="choosecurrency(this)">OMR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال عماني</span></a>
+                        <a data-myval="QAR" onclick="choosecurrency(this)">QAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال قطري</span></a>
+                        <a data-myval="MYR" onclick="choosecurrency(this)">MYR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>رينغيت ماليزي</span></a>
+                        <a data-myval="zł" onclick="choosecurrency(this)">zł&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>زلوتى بولندى</span></a>
+                        <a data-myval="₪" onclick="choosecurrency(this)">₪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>شيكل اسرائيلي</span></a>
+                        <a data-myval="CHF" onclick="choosecurrency(this)">CHF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>فرنك سويسري</span></a>
+
+                    </div>
+
+                    <div class="currency_section">
+
+                        <a data-myval="DKK" onclick="choosecurrency(this)">DKK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون دنماركي</span></a>
+                        <a data-myval="SEK" onclick="choosecurrency(this)">SEK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون سويدي</span></a>
+                        <a data-myval="NOK" onclick="choosecurrency(this)">NOK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون نرويجي</span></a>
+                        <a data-myval="Kč" onclick="choosecurrency(this)">Kč&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كورون تشيكي</span></a>
+                        <a data-myval="GEL" onclick="choosecurrency(this)">GEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>لاري جورجي</span></a>
+                        <a data-myval="lei" onclick="choosecurrency(this)">BGN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليف بلغاري</span></a>
+                        <a data-myval="MDL" onclick="choosecurrency(this)">lei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليو روماني</span></a>
+                        <a data-myval="MDL" onclick="choosecurrency(this)">MDL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليو مولدوفي</span></a>
+                        <a data-myval="AZN" onclick="choosecurrency(this)">AZN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>مانات أذربيجاني</span></a>
+                        <a data-myval="UAH" onclick="choosecurrency(this)">UAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>هريفنيا أوكراني</span></a>
+                        <a data-myval="KRW" onclick="choosecurrency(this)">KRW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>وون كوري</span></a>
+                        <a data-myval="¥" onclick="choosecurrency(this)">¥&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ين ياباني</span></a>
+                        <a data-myval="CNY" onclick="choosecurrency(this)">CNY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>يوان صيني</span></a>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="newnav">
+            <div class="user_srch clearfix content">
+                <div class="hotel_srch clearfix">
+
+                    <img src="../resources/img/logo_colored.png">
+                    <form>
+                        <label for="search_txt"><span><i class="icon_search"></i></span></label>
+                        <input id="search_txt" type="text" placeholder="البحث بإسم الفندق أو المعلم">
+                    </form>
+
+                </div>
+                <div class="register">
+                    <ul class="clearfix">
+                        <li><a class="hotelregister" href="../pages/hotel_enter.html"><span>دخول اصحاب الفنادق</span></a></li>
+                        <li><a id="signup" class="usereg signup hidden" href="../pages/signup.html"><span>انشاء حساب</span></a></li>
+
+                        <li><a id="singin" class="singin hidden" href="../pages/signin.html"><span>تسجيل الدخول</span></a></li>
+                        <li>
+                            <p id="useregname" class="useregname">
+                                <span>Ahmed salama</span>
+                                <i class="fa fa-angle-down"></i>
+                            </p>
+                        </li>
+                        <li><img src="../resources/img/profile-01.jpg" id="profile" class="usereg profile"></li>
+                        <li><a id="myreserve" class="usereg myreserve " href="../pages/userprofile.html"><span>عرض حجوزاتي</span></a></li>
+
+
+                    </ul>
+
+                    <ul id="idprofile" class="idprofile hidden clearfix">
+                        
+                        <a href="../pages/userprofile.html">
+                            <li class="ident"><i class="icon_person_no"></i><span>الملف الشخصي</span></li>
+                        </a>
+                        <a href="../pages/userprofile.html">
+                            <li class="ident"><i class="fa fa-envelope"></i><span>البريد الوارد</span></li>
+                        </a>
+                        <a href="../pages/userprofile.html">
+                            <li class="ident"><i class="fa fa-star"></i><span>التقييمات</span></li>
+                        </a>
+                        <a href="../pages/userprofile.html">
+                            <li class="ident"><i class="fa fa-tag"></i><span>حجوزاتي</span></li>
+                        </a>
+                        <a href="../pages/userprofile.html">
+                            <li class="ident"><i class="fa fa-heart"></i><span>التفضيلات</span></li>
+                        </a>
+                        <a href="main.html" class="signout">
+                            <div class="middle"><i class="fa fa-sign-out"></i><span>تسجيل خروج</span></div>
+                        </a>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </header>
+    
+    <div class="srch_res_stats content" >
+        <div class="clearfix">
+            <p>المملكة العربية السعودية : مكة وجدنا لك أكثر من 1.485 مكان اقامة</p>
+        </div>
+    </div>
+    
+    <section class="index">
+        <div class="clearfix content">
+            <div class="omra_search clearfix">
+                <div class="stepper clearfix">
+                    <ul>
+                        <div class="fit">
+                            <p>تاريخ الوصول </p>
+                            <label class="check arrive" for="picker" disabled>
+                                <i class="icon_date"></i>
+                                <input type="text" id="picker" class="form-control hide" readonly>
+                            </label>
+                        </div>
+                        <div class="fit">
+                            <p>تاريخ المغادرة </p>
+                            <label class="check checkOut" for="pickercheck" disabled>
+                                <i class="icon_date"></i>
+                                <input type="text" id="pickercheck" class="form-control hide" disabled readonly>
+                            </label>
+                        </div>
+                        <div class="fit mytype">
+                            <p>نوع الحجز</p>
+                            <label for="none" class="reserveType" disabled>
+                                <div><i class="icon_bed"></i><input id="option" type="text" class="Option" readonly></div>
+                            </label>
+                        </div>
+                        <div class="fit clearfix">
+                            <p>عدد الأشخاص</p>
+                            <button id="personNo" class="personNo" disabled>
+                                <div><i class="icon_person_no"></i><input type="text" class="num1" readonly></div>
+                            </button>
+
+                        </div>
+                        <div class="fit">
+                            <p>عدد الأطفال</p>
+                            <button id="childNo" class="childNo" disabled>
+                                <div><i class="icon_child_no"></i><input type="text" class="num2" readonly></div>
+                            </button>
+
+                        </div>
+                        <div class="fit">
+                            <p>بحث</p>
+                            <a href="../pages/search_result.html" id="disabled" onclick="return false;" target="_blank"><label id="search" class="search">
+                                    <div><i class="icon_search"></i></div>
+                                </label></a>
+                        </div>
+                    </ul>
+                    <div class="type hidden">
+                        <div class="dropdownres">
+                            <button onclick="myFunction()" class="dropbtn hiddenType" id="btns"></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a class="resType" href="#home">غرفة <i class="icon_bed"></i></a>
+                                <a class="resType" href="#about">جناح <i class="icon_wing"></i></a>
+                                <a class="resType" href="#contact">شقة <i class="icon_aparement"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nomber" class="nomber  hidden">
+                        <div class="dropdownPerson">
+                            <div class="incriment">
+                                <a><i id="incperson" class="fa fa-angle-up up"></i>
+                                    <span class="person" id="person">1</span>
+                                    <i id="decperson" class="fa fa-angle-down down"></i></a>
+                            </div>
+                            <span>عدد البالغين</span>
+                        </div>
+                        <i class="fa next_step fa-check"></i>
+                    </div>
+                    <div id="nomb" class="nomber hidden">
+                        <div class="dropdownPerson">
+                            <div class="incriment">
+                                <a><i id="inchild" class="fa fa-angle-up up"></i>
+                                    <span class="person" id="child">0</span>
+                                    <i id="dechild" class="fa fa-angle-down down"></i></a>
+                            </div>
+                            <span>عدد الأطفال</span>
+                        </div>
+                        <i class="fa next_step_child fa-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="srch_content">
+        <div class="clearfix content">
+            <aside class="map_filter clearfix">
+                <div class="mapsParent">
+                    <div class="hotelMaps">
+                    </div>
+                    <a onclick="MapClicked()"  class="maps_location"><span>اعرض الخريطة</span><i class="icon_location"></i></a>
+                </div>
+                <button id="sort" onclick="showfilter()"><i class="fa fa-angle-down"></i>التصفية حسب</button>
+                <div id="filter" class="filter">                    
+                    <a class="sort"><span>التصفية حسب</span><i class="fa fa-angle-down"></i></a>
+                    <div class="filter_show">
+                        <div class="filter_section">
+                            <p class="night_price">تكلفة الليلة الواحدة</p>
+                            <div class="price-slider">
+                                <div class="price_result">
+                                    <input class="number" type="number" value="50" min="20" max="1200"/><span id="fromslide" class="slide_cur fromslide">SAR</span><span class="to">to</span>
+                                    <input class="number" type="number" value="500" min="20" max="1200"/><span id="toslide" class="slide_cur toslide">SAR</span>
+                                </div>
+                                <input class="range" value="250" min="20" max="1200" step="10" type="range" />
+                                <input  class="range" value="500" min="20" max="1200" step="10" type="range" />
+                                <svg width="100%" height="24">
+                                    <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>عدد النجوم</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input class="stars" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نجمة واحدة
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input class="stars" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نجمتان
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input class="stars" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                            3 &nbsp;  نجوم
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input class="stars" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                            4 &nbsp; نجوم
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input class="stars" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                            5 &nbsp; نجوم
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input class="stars" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          غير مصنف
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>مرافق الفندق</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                         <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                    
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                         <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                     
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>خدمات الفندق</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                         <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                     
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                        
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>المعالم</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                         <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                      
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>الوجبات</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          شامل الافطار
+                                    </label>                                        
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                         <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                         <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>سياسات الحجز</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                      
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>خدمات الموقع</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          توفر محطة حافلات
+                                    </label>                                  
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>المطاعم</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                       
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                        <div class="filter_section">
+                            <a class="category"><span>ذوي الاحتياجات الخاصة</span><i class="fa fa-angle-down"></i></a>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                        
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                      
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                            <div class="f_options">
+                                    <label class="container">
+                                          <input onclick="myClickBox(this)" type="checkbox">
+                                          <figure class="checkmark"></figure>
+                                          نص افتراضي
+                                    </label>                                        
+                                    <p class="myvalue">100</p>                                
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="closefilter()" class="hidden" id="closefilter">&times;</button>
+                </div>
+            </aside>
+            
+            
+
+<!--                top filter - and room          -->
+            
+            
+            <aside class="hotel_srchres clearfix">
+                
+                <!--                top filter           -->
+                
+                <ul class="filter_menu">
+                    <li class="topfilter best_choose menuselect active"><a>أفضل ما اختارناه لك</a></li>
+                    <li class="topfilter menuselect least_price"><a>الأقل سعر</a></li>
+                    <li id="High_value" class="topfilter menuselect High_value"><a><span>الأفضل تقييماً</span> <i class="fa fa-angle-down"></i></a>
+                       
+                    </li>
+                    <li id="stars" class="topfilter menuselect stars"><a><span>حسب النجوم</span> <i class="fa fa-angle-down"></i></a>
+                         
+                    </li>
+                    <li id="dist_haram" class="topfilter menuselect dist_haram"><a><span>البعد عن الحرم</span> <i class="fa fa-angle-down"></i></a>
+                        
+                    </li>
+                    <div id="bestMenudwn" class="mymenudown bestMenudwn hidden">
+                        <div><a>ممتاز</a><a>رائع</a></div>
+                        <div><a>جيد جداً</a><a>جيد</a></div>
+                    </div>
+                    <div id="starMenudwn" class="mymenudown starMenudwn hidden">
+                        <div><span>النجوم</span><a>1&nbsp;&nbsp;:&nbsp;&nbsp;5</a></div>
+                        <div><span>النجوم</span><a>5&nbsp;&nbsp;:&nbsp;&nbsp;1</a></div>
+                    </div>
+                    <div id="distMenudwn" class="mymenudown distMenudwn hidden">
+                        <div><span>المسافة</span><a>الأقرب أولا</a></div>
+                        <div><span>المسافة</span><a>الأبعد أولا</a></div>
+                    </div>
+                    
+                   
+                    
+                </ul>
+                
+<!--                top filter - end                         -->
+                
+<!--                room                         -->
+                
+                <div class="hotel_room">
+                    <div class="main_container  clearfix">
+                        <div class="offer clearfix">
+                            <input class="hidden" id="mydeadline" type="datetime" value="Feb 7, 2020 23:45:25" />                            
+                            <div class="offercontent"><span class="offerTime"></span><span>مدة انتهاء العرض</span><span>عرض حصري من ويسترن جاردن خصم 80% شامل الإفطار و العشاء بادر بالحجز</span></div>                            
+                        </div>
+                        <div class="res_container">
+                            <div class="room">
+                                <div class="image_container"><span class="gradient"></span><img class="parentImage" src="../resources/img/room_1.png" /></div>
+                                <a onclick="nextimage(this)"><i class="next fa fa-angle-right"></i></a>
+                                <a onclick="previmage(this)"><i  class="next fa fa-angle-left"></i></a>
+                                <div class="share">
+                                    <ul class="clearfix">
+                                        <li><i class="fa fa-heart"></i></li>
+                                        <li><i class="icon_share"></i></li>
+                                    </ul>
+                                    <div class="follow">
+                                        <i class="icon_notifications"></i>
+                                        <p>متابعة</p>
+                                    </div>
+                                </div>
+                                <p class="ticket">الأكثر عرضا</p>
+                                <ul id="galary" class="galary">
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb  current" src="../resources/img/room_1.png" /><span>مشاهدة الصور</span></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_2.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_3.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_4.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_1.png" /></a></li>                                    
+                                </ul>
+                            </div>
+                            <div class="res_content">
+                                <div class="res_state clearfix">
+                                    <div class="hotel_info">
+                                        <a href="../pages/hotel1.html" class="info_name">منتجع ويسترن جاردن جدة</a>
+                                        <span class="info_rate">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="location_content clearfix">
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location_basic.svg"></span><span>
+                                                <input type="text" class="latValue hidden" value="21.422510" />
+                                                <input type="text" class="lngValue hidden" value="39.826168" />
+                                                <a class="mapshow" onclick="MapLinkClicked(this)">إعرض على الخريطة</a>
+                                                الشاطيء, جدة
+                                            </span>
+                                        </div>
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location.svg"></span><span><a>5 km</a>من الحرم المكي</span>
+                                        </div>
+                                    </div>
+                                    <div class="service_info">
+                                        <span>موقع جيد جدا</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="service_info service">
+                                        <span>إفطار مجاني</span>
+                                        <span>مواصلات قريبة</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="more_service">
+                                        <img src="../resources/img/timer.svg">
+                                        <span>الأكثر مبيعا خلال <figure>48</figure> ساعة <figure>55</figure> مرة</span>                                        
+                                    </div>
+                                    <div class="price_info">
+                                        
+                                        <span>يبدأ سعر الليلة من <figure class="oldprice">1450</figure> <figure>1220&nbsp;</figure>&nbsp; + &nbsp;&nbsp;ضرائب و رسوم 300 </span>&nbsp;&nbsp;<figure class="new_currency">SAR</figure>
+                                        
+                                    </div>
+                                    <div class="reserve_info">
+                                       <a href="../pages/hotel1.html">احجز</a>
+                                       <img src="../resources/img/timer.svg"><span>تم أخر حجز منذ <figure>44</figure> دقيقة</span>
+                                         
+                                    </div>
+                                    
+                                </div>
+                                <div class="separation clearfix"></div>
+                                <div class="evaluation clearfix">
+                                    <div class="main_eval">
+                                        <span onclick="evalShow(this)" onmouseenter="evalhide(this)" onmouseleave="evalShow(this)" class="eval">6.0</span><span><i class="evalIcon fa fa-angle-right"></i></span> 
+                                        <div class="evalcontainer hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInput hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafek"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInput hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="quality"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInput hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="price"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInput hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="clean"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInput hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="site"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInput hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="serve"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                    <p class="evalComment">جيد جداً</p>
+                                    <p class="evalNo">تقييم 145</p>
+                                    <div class="main_compare">
+                                        
+                                        <span onclick="compareShow(this)" onmouseout="comparehide(this)" onmouseover="compareShow(this)"  class="compare">
+                                            <p>أفضل من</p>
+                                            <p>95%</p>
+                                            <p>من عقارات المدينة</p>
+                                        </span>
+                                        <span><i class="compareIcon fa fa-angle-right"></i></span>
+                                        <div class="evalcontainercompare hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInputcompare hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafekcompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInputcompare hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="qualitycompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInputcompare hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="pricecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInputcompare hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="cleancompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInputcompare hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="sitecompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInputcompare hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="servecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="discount">%خصم 30</p>
+                                    
+                                </div>
+                             
+                            </div>
+                            
+                        </div>
+                    </div>                    
+                </div>
+                
+                
+              
+               
+                
+
+
+              
+                
+
+                
+                
+            </aside>
+            
+            
+        </div>
+        <div class="content">
+            <div class="nextPage">
+                <div class="srch_pages">
+                    <a><i class="fa fa-angle-left"></i></a>
+                    <a onclick="changePage(this)" class="page currentPage">1</a>
+                    <a onclick="changePage(this)" class="page">2</a>
+                    <a onclick="changePage(this)" class="page">3</a>
+                    <a onclick="changePage(this)" class="page">4</a>
+                    <a onclick="changePage(this)" class="page">5</a>
+                    <a onclick="changePage(this)" class="page">6</a>
+                    <a onclick="changePage(this)" class="page">7</a>
+                    <a onclick="changePage(this)" class="page">8</a>
+                    <a><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    <footer class="footer wrapper">
+        <div class="clearfix">
+            <div class="footerContent flexy">
+                <div>
+                    <p class="omranabza"><a class="omranabza" href="#">نبذة عن عمرة.كوم</a></p>
+                </div>
+                <div>
+                    <p class="omranabza">قانوني</p>
+                    <span><a href="#">- &nbsp; الشروط و الأحكام</a></span>
+                    <span><a href="#">- &nbsp; سياسة الخصوصية</a></span>
+                </div>
+                <div class="callus">
+                    <p class="omranabza">الدعم</p>
+                    <span><a href="#">- &nbsp; اتصل بنا</a></span>
+                    <span><a href="#">- &nbsp; الأسئلة الشائعة</a></span>
+                    <span class="phone-no">- &nbsp; 968205841556+<img src="../resources/img/whatsapp.svg"></span>
+                    <span class="phone-no">- &nbsp; 968205841556+ <img src="../resources/img/callsvg.svg"></span>
+
+                    <div class="team">
+                        <span>فريقنا جاهز لمساعدتك على مدار الساعة</span>
+                        <p>15147</p>
+                        <span>أو يمكنك مراسلتنا على البريد الإلكتروني</span>
+                        <p>@omra.com</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <p class="omranabza">التواصل الاجتماعي</p>
+                    <div><a href="#"><i class="icon_facebook"></i><span>فيسبوك</span></a></div>
+                    <div><a href="#"><i class="icon_twitter"></i><span>تويتر</span></a></div>
+                    <div><a href="#"><i class="icon_insta"></i><span>انستقرام</span></a></div>
+                    <div><a href="#"><i class="icon_linkedin"></i><span>لينكدان</span></a></div>
+                    <div><a href="#"><i class="icon_snap"></i><span>سناب شات</span></a></div>
+                    <div><a href="#"><i class="icon_youtube"></i><span>يوتيوب</span></a></div>
+                </div>
+                <div class="phonephoto">
+                    <div><img class="mobile" src="../resources/img/mobile.png"></div>
+                    <div class="appstore">
+                        <a class="store" href="#"><img src="../resources/img/appstore.png"></a>
+                        <a class="store" href="#"><img src="../resources/img/googleplay.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="maincredit">
+                <div class="credit flexy">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copy wrapper">
+        <div class="copyright">
+            <p>حقوق الطبع و النشر 2019 - جميع الحقوق محفوظة لدى عمرة.كوم</p>
+        </div>
+    </div>
+    
+    
+    
+
+    <script src="../vendors/js/jquery-3.3.1.min.js"></script>
+    <script src="../vendors/js/jquery.min.js"></script>
+    <script src="../vendors/js/respond.min.js"></script>
+    <script src="../vendors/js/html5shiv.js"></script>
+    <script src="../vendors/js/selectivizr-min.js"></script>
+    <script src="../vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../vendors/js/moment.min.js"></script>
+    <script src="../vendors/js/daterangepicker.js"></script>   
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPaESzlKnYyvvuaUij3hmYKitejPUbOIM&callback=initMap">
+    </script>
+    <script src="../resources/js/mainscript.js"></script>
+<script>(function() {
+
+                    var parent = document.querySelector(".price-slider");
+                    if(!parent) return;
+
+                    var
+                    rangeS = parent.querySelectorAll(".range"),
+                    numberS = parent.querySelectorAll(".number");
+
+                    rangeS.forEach(function(el) {
+                    el.oninput = function() {
+                    var slide1 = parseFloat(rangeS[0].value),
+                    slide2 = parseFloat(rangeS[1].value);
+
+                    if (slide1 > slide2) {
+                    [slide1, slide2] = [slide2, slide1];
+                    }
+
+                    numberS[0].value = slide1;
+                    numberS[1].value = slide2;
+                    }
+                    });
+
+                    numberS.forEach(function(el) {
+                    el.oninput = function() {
+                    var number1 = parseFloat(numberS[0].value),
+                    number2 = parseFloat(numberS[1].value);
+
+                    if (number1 > number2) {
+                    var tmp = number1;
+                    numberS[0].value = number2;
+                    numberS[1].value = tmp;
+                    }
+
+                    rangeS[0].value = number1;
+                    rangeS[1].value = number2;
+
+                    }
+                    });
+
+                })();
+    
+</script>
+<script>
+      
+        window.onload = function(){
+                NodeList.prototype.forEach = Array.prototype.forEach;
+                var offerInputs = document.querySelectorAll("input[type=datetime]").forEach(function (el) {
+                                if (!(el.value == null ||  el.value =="") ){
+                                     var deadline = el.value;
+                                     var countDownDate = new Date(deadline).getTime();
+                                     var x = setInterval(function() {                   
+                                                    var now = new Date().getTime();                 
+                                                    var distance = countDownDate - now;                  
+                                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);                   
+                                                    el.parentElement.querySelector('.offerTime').innerHTML = days + "d : " + hours + "h : " + minutes + "m : " + seconds + "s ";                   
+                                                    if (distance < 0) { 
+                                                        clearInterval(x);
+                                                        el.parentElement.classList.add('hidden');
+                                                    } }, 1000
+                                                   );
+
+
+                                }else {
+                                    el.parentElement.classList.add('hidden');
+                                }
+                       
+               });
+        }
+        
+</script>
+<script>
+        function MapClicked() {
+            overlayMap.classList.add('active');
+            var getmap = function initMap() {
+
+                //            ضيف للمصفوفة هنا مواقع الفندق يا باشا اسم الفندق و موقعة
+
+                var locations = [
+                    ['Bondi Beach', -33.890542, 151.274856, 4],
+                    ['Coogee Beach', -33.923036, 151.259052, 5],
+                    ['Cronulla Beach', -34.028249, 151.157507, 3],
+                    ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+                    ['Maroubra Beach', -33.950198, 151.259302, 1]
+                ];
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 10,
+                    center: new google.maps.LatLng(-33.92, 151.25),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                var infowindow = new google.maps.InfoWindow();
+
+                var marker, i;
+
+                for (i = 0; i < locations.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        title: locations[i][0],
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            infowindow.setContent(locations[i][0]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+
+            }();
+        }
+ </script>
+
+
+
+
+
+</body>
+
+</html>

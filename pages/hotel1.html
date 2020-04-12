@@ -1,0 +1,3000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="refresh" content="1200">
+    <link rel="stylesheet" href="../vendors/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">   
+    <link rel="stylesheet" type="text/css" href="../vendors/css/font-awesome.min.css">    
+    <link rel="stylesheet" type="text/css" href="../resources/css/customiconfont.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/mainstyle_rtl.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap&subset=arabic" rel="stylesheet">
+      
+
+    <title>hotel</title>
+
+
+
+</head>
+
+<body data-title="hotel" > 
+    <div id="overlaymap">
+        <div class="mapContainer">
+            <span class="closeMap">&times;</span>
+            <div id="map"></div>
+        </div>
+    </div>
+          
+
+    <div id="hotelOverlay" class="overlayed hidden">       
+       
+        <div class="overlayCar hotel_sec">
+            
+            <div class="Overlayside hotelSide">
+                <h2 class="hoteldata">فندق سرايا طابة</h2>                
+                <h3 class="roomdata hidden">غرفة مزدوجة</h3>                
+                <div class="overlayedflex">
+<!--                    تفاصيل مميزات لغرفة -->
+                    <article class="room_services">
+<!--                        اربعة مميزات فقط -->
+                        <p class="wifi">واي فاي مجاني</p>
+                        <p class="cond">تكييف</p>
+                        <p class="mychange">تغيير عملات</p>
+                        <p class="clean">خدمات تنظيف يوميا</p>
+                        <p class="hidden mybed">3 أسرّة مفردة</p>                       
+                        <p class="hidden nonsmoke">غرف لغير المدخنين</p>
+                        <p class="hidden shower">دش وبانيو</p>
+                      
+                    </article>
+                    <article class="closeRegion hidden">
+<!--                        اربعة اماكن جذب قريبة -->
+                        <p class="MycloseRegion">المسجد النبوي</p>
+                        <p class="MycloseRegion">المسجد النبوي</p>
+                        <p class="MycloseRegion">المسجد النبوي</p>
+                        <p class="MycloseRegion">المسجد النبوي</p>
+                        
+                       
+                      
+                    </article>
+<!--                    تفاصيل السعر     -->
+                    <article>
+                        <div><span>السعر يبدأ من</span></div>
+                        <div class="myDescount"><span>خصم اليوم</span><span>82%</span></div>
+                        <div><span>SAR</span><span>264</span></div>                       
+                        <div><span>SAR</span><span>44</span></div>
+                    </article>
+                    <a onclick="goRoom(this)">الذهاب إلى الغرفة</a>
+                </div>               
+            </div>            
+            <div class="OverlayGal hotelGalary">
+                <i id="prevAct" onclick="prevActivation(this)" class="fa fa-angle-right"></i>
+                <i id="nextAct" onclick="nextActivation(this)" class="fa fa-angle-left"></i>
+                <div class="gradientMu"></div>
+                <img id="activated" src="../resources/img/hotelgallery/hotel_1.jpg">
+              
+            </div>
+        </div>
+        
+        <div class="GalaryBottom">
+            <div class="main_sections">
+                <a id="hotels" class="active mainselect">الفندق</a>
+                <a id="rooms" class="mainselect">الغرفة</a>
+                <a id="ser" class="mainselect">المرافق</a>
+                <a id="regions" class="mainselect">مناطق الجذب القريبة</a>
+            </div>
+            <div id="hotelThumbimages" class="bottomImgs hotelThumbimages">
+<!--                عدد صور محدد  14صورة      -->
+                <img class="active" src="../resources/img/hotelgallery/hotel_1.jpg">
+                <img src="../resources/img/hotelgallery/hotel_8.jpg">
+                <img src="../resources/img/hotelgallery/hotel_9.jpg">                
+                <img src="../resources/img/hotelgallery/hotel_1.jpg">
+                <img src="../resources/img/hotelgallery/hotel_6.jpg">
+                <img src="../resources/img/hotelgallery/hotel_7.jpg">
+                <img src="../resources/img/hotelgallery/hotel_8.jpg">
+                <img src="../resources/img/hotelgallery/hotel_9.jpg"> 
+                <img src="../resources/img/hotelgallery/hotel_2.jpg">
+                <img src="../resources/img/hotelgallery/hotel_3.jpg">
+                <img src="../resources/img/hotelgallery/hotel_4.jpg">
+                <img src="../resources/img/hotelgallery/hotel_5.jpg">
+                <img src="../resources/img/hotelgallery/hotel_6.jpg">
+                <img src="../resources/img/hotelgallery/hotel_7.jpg">
+                <img src="../resources/img/hotelgallery/hotel_8.jpg">
+                <img src="../resources/img/hotelgallery/hotel_9.jpg">                
+                <img src="../resources/img/hotelgallery/hotel_1.jpg">
+                <img src="../resources/img/hotelgallery/hotel_6.jpg">
+                <img src="../resources/img/hotelgallery/hotel_7.jpg">
+                <img src="../resources/img/hotelgallery/hotel_8.jpg">
+                <img src="../resources/img/hotelgallery/hotel_9.jpg">                
+               
+                
+            </div>
+            <div id="roomThumbimages" class="bottomImgs roomThumbimages hidden">
+                <!--                عدد صور محدد  14صورة      -->
+                <img class="active" src="../resources/img/roomgalary/room_1.jpg">
+                <img src="../resources/img/roomgalary/room_4.jpg">
+                <img src="../resources/img/roomgalary/room_5.jpg">
+                <img src="../resources/img/roomgalary/room_6.jpg">
+                <img src="../resources/img/roomgalary/room_2.jpg">
+                <img src="../resources/img/roomgalary/room_3.jpg">
+                <img src="../resources/img/roomgalary/room_4.jpg">
+                <img src="../resources/img/roomgalary/room_5.jpg">
+                <img src="../resources/img/roomgalary/room_6.jpg">
+            </div>
+            <div id="serThumbimages" class="bottomImgs serThumbimages hidden">
+                <!--                عدد صور محدد  14صورة      -->
+                <img class="active"  src="../resources/img/servicesgalary/ser_1.jpg">
+                <img src="../resources/img/servicesgalary/ser_2.jpg">
+                <img src="../resources/img/servicesgalary/ser_4.jpg">
+                <img src="../resources/img/servicesgalary/ser_5.jpg">
+                <img src="../resources/img/servicesgalary/ser_6.jpg">
+                <img src="../resources/img/servicesgalary/ser_3.jpg">
+                <img src="../resources/img/servicesgalary/ser_4.jpg">
+                <img src="../resources/img/servicesgalary/ser_5.jpg">
+                <img src="../resources/img/servicesgalary/ser_6.jpg">
+            </div>
+            <div id="attrThumbimages" class="bottomImgs attrThumbimages hidden">
+                <!--                عدد صور محدد  14صورة      -->
+                <img class="active"  src="../resources/img/attractregions/attr_1.jpg">
+                <img src="../resources/img/attractregions/attr_2.jpg">
+                <img src="../resources/img/attractregions/attr_3.jpg">
+                <img src="../resources/img/attractregions/attr_4.jpg">
+                <img src="../resources/img/attractregions/attr_5.jpg">
+                <img src="../resources/img/attractregions/attr_6.jpg">               
+                <img src="../resources/img/attractregions/attr_6.jpg">               
+                <img src="../resources/img/attractregions/attr_6.jpg">               
+                
+            </div>
+           
+        </div>
+         
+        <span id="closeMyoverlay" class="closeMyoverlay">&times;</span>
+    </div>
+    
+    
+    <div id="overlaymap">
+        <div class="mapContainer">
+            <span class="closeMap">&times;</span>
+            <div id="map"></div>
+        </div>
+    </div>
+    <header id="mainPage">
+
+        <div class="wrapper">
+            <div class="content clearfix">
+                <div class="currency_language">
+                    <ul class="lang_chose">
+                        <li>
+                            <a href="#" class="choosemain" id="lang_menu">
+
+                                <img class="lang_icon" src="../resources/img/custom_icon.png">
+                                <input id="changing_language" type="text" value="اختر اللغة" readonly />
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="choosemain" id="currency_menu">
+                                <img class="currency_icon" src="../resources/img/custom_icon.png">
+                                <input id="changing_currency" type="text" value="اختر العملة" readonly />
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <div class="language hidden" id="menu_open">
+                            <div class="language_content">
+                                <form>
+                                    <a id="arabic">العربية<img src="../resources/img/lang_icon_small_arabic.svg" /></a>
+                                    <a id="english">English <img src="../resources/img/lang_icon_small_english.svg" /></a>
+                                </form>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="social">
+                        <ul class="">
+                            <li><a href="#"><i class="icon_facebook"></i></a></li>
+                            <li><a href="#"><i class="icon_twitter"></i></a></li>
+                            <li><a href="#"><i class="icon_insta"></i></a></li>
+                            <li><a href="#"><i class="icon_linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon_snap"></i></a></li>
+                            <li><a href="#"><i class="icon_youtube"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="currency hidden" id="menu_currency_open">
+            <div class="currency_content">
+                <form>
+                    <div class="clearfix">
+                        <div class="currency_section">
+                            <a data-myval="SAR" onclick="choosecurrency(this)">SAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال سعودي</span></a>
+                            <a data-myval="USD$" onclick="choosecurrency(this)">USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار أمريكي</span></a>
+                            <a data-myval="AUD" onclick="choosecurrency(this)">AUD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار استرالي</span></a>
+                            <a data-myval="CAD" onclick="choosecurrency(this)">CAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار كندي</span></a>
+                            <a data-myval="$S" onclick="choosecurrency(this)">$S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار سنغافوري</span></a>
+                            <a data-myval="FJD" onclick="choosecurrency(this)">FJD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار فيجي</span></a>
+                            <a data-myval="NZD" onclick="choosecurrency(this)">NZD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار نيوزيلندي</span></a>
+                            <a data-myval="NAD" onclick="choosecurrency(this)">NAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار ناميبي</span></a>
+                            <a data-myval="$HK" onclick="choosecurrency(this)">$HK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار هونج كونج</span></a>
+                            <a data-myval="ZAR" onclick="choosecurrency(this)">ZAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>راند جنوب أفريقيا</span></a>
+                            <a data-myval="€ EURO" onclick="choosecurrency(this)">€&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>يورو </span></a>
+                            <a data-myval="GBP " onclick="choosecurrency(this)">£&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>جنيه استرليني</span></a>
+                            <a data-myval=".د.ك" onclick="choosecurrency(this)">.د.ك&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار كويتي</span></a>
+                            <a data-myval="BHD" onclick="choosecurrency(this)">BHD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار بحريني</span></a>
+                            <a data-myval="EGP" onclick="choosecurrency(this)">EGP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>جنية مصري</span></a>
+                        </div>
+
+                        <div class="currency_section">
+
+                            <a data-myval="AED" onclick="choosecurrency(this)">AED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>درهم اماراتي</span></a>
+                            <a data-myval="JOD" onclick="choosecurrency(this)">JOD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار أردني</span></a>
+                            <a data-myval="TL" onclick="choosecurrency(this)">TL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>الليرة التركية</span></a>
+                            <a data-myval="CL$" onclick="choosecurrency(this)">CL$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>بيزو كولومبي</span></a>
+                            <a data-myval="KZT" onclick="choosecurrency(this)">KZT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>تينغ كازاخستاني</span></a>
+                            <a data-myval="RUB" onclick="choosecurrency(this)">RUB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبل روسي</span></a>
+                            <a data-myval="Rp" onclick="choosecurrency(this)">Rp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبية اندونيسي</span></a>
+                            <a data-myval=".RS" onclick="choosecurrency(this)">.RS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبيه هندي</span></a>
+                            <a data-myval="$R" onclick="choosecurrency(this)">$R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال برازيلي</span></a>
+                            <a data-myval="OMR" onclick="choosecurrency(this)">OMR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال عماني</span></a>
+                            <a data-myval="QAR" onclick="choosecurrency(this)">QAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال قطري</span></a>
+                            <a data-myval="MYR" onclick="choosecurrency(this)">MYR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>رينغيت ماليزي</span></a>
+                            <a data-myval="zł" onclick="choosecurrency(this)">zł&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>زلوتى بولندى</span></a>
+                            <a data-myval="₪" onclick="choosecurrency(this)">₪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>شيكل اسرائيلي</span></a>
+                            <a data-myval="CHF" onclick="choosecurrency(this)">CHF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>فرنك سويسري</span></a>
+
+                        </div>
+
+                        <div class="currency_section">
+
+                            <a data-myval="DKK" onclick="choosecurrency(this)">DKK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون دنماركي</span></a>
+                            <a data-myval="SEK" onclick="choosecurrency(this)">SEK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون سويدي</span></a>
+                            <a data-myval="NOK" onclick="choosecurrency(this)">NOK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون نرويجي</span></a>
+                            <a data-myval="Kč" onclick="choosecurrency(this)">Kč&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كورون تشيكي</span></a>
+                            <a data-myval="GEL" onclick="choosecurrency(this)">GEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>لاري جورجي</span></a>
+                            <a data-myval="lei" onclick="choosecurrency(this)">BGN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليف بلغاري</span></a>
+                            <a data-myval="MDL" onclick="choosecurrency(this)">lei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليو روماني</span></a>
+                            <a data-myval="MDL" onclick="choosecurrency(this)">MDL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليو مولدوفي</span></a>
+                            <a data-myval="AZN" onclick="choosecurrency(this)">AZN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>مانات أذربيجاني</span></a>
+                            <a data-myval="UAH" onclick="choosecurrency(this)">UAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>هريفنيا أوكراني</span></a>
+                            <a data-myval="KRW" onclick="choosecurrency(this)">KRW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>وون كوري</span></a>
+                            <a data-myval="¥" onclick="choosecurrency(this)">¥&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ين ياباني</span></a>
+                            <a data-myval="CNY" onclick="choosecurrency(this)">CNY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>يوان صيني</span></a>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="newnav">
+            <div class="user_srch clearfix content">
+                <div class="hotel_srch clearfix">
+
+                    <img src="../resources/img/logo_colored.png">
+                    <form>
+                        <label for="search_txt"><span><i class="icon_search"></i></span></label>
+                        <input id="search_txt" type="text" placeholder="البحث بإسم الفندق أو المعلم">
+                    </form>
+
+                </div>
+                <div class="register">
+                    <ul class="clearfix">
+                        <li><a class="hotelregister" href="../pages/hotel_enter.html"><span>دخول اصحاب الفنادق</span></a></li>
+                        <li><a id="signup" class="usereg signup hidden" href="../pages/signup.html"><span>انشاء حساب</span></a></li>
+
+                        <li><a id="singin" class="singin hidden" href="../pages/signin.html"><span>تسجيل الدخول</span></a></li>
+                        <li>
+                            <p id="useregname" class="useregname ">
+                                <span>Ahmed salama</span>
+                                <i class="fa fa-angle-down"></i>
+                            </p>
+                        </li>
+                         <li><img src="../resources/img/profile-01.jpg" id="profile" class="usereg profile"></li>
+                        <li><a id="myreserve" class="usereg myreserve" href="../pages/userprofile.html"><span>عرض حجوزاتي</span></a></li>
+
+
+                    </ul>
+
+                    <ul id="idprofile" class="idprofile hidden clearfix">
+
+                        <a href="#">
+                            <li class="ident"><i class="icon_person_no"></i><span>الملف الشخصي</span></li>
+                        </a>
+                        <a href="#">
+                            <li class="ident"><i class="fa fa-envelope"></i><span>البريد الوارد</span></li>
+                        </a>
+                        <a href="#">
+                            <li class="ident"><i class="fa fa-star"></i><span>التقييمات</span></li>
+                        </a>
+                        <a href="#">
+                            <li class="ident"><i class="fa fa-tag"></i><span>حجوزاتي</span></li>
+                        </a>
+                        <a href="#">
+                            <li class="ident"><i class="fa fa-heart"></i><span>التفضيلات</span></li>
+                        </a>
+                        <a href="main.html" class="signout">
+                            <div class="middle"><i class="fa fa-sign-out"></i><span>تسجيل خروج</span></div>
+                        </a>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </header>
+    
+    
+    
+    <section class="index">
+        <div class="clearfix content">
+            <div class="omra_search clearfix">
+                <div class="stepper clearfix">
+                    <ul>
+                        <div class="fit">
+                            <p>تاريخ الوصول </p>
+                            <label class="check arrive" for="picker" disabled>
+                                <i class="icon_date"></i>
+                                <input type="text" id="picker" class="form-control hide" readonly>
+                            </label>
+                        </div>
+                        <div class="fit">
+                            <p>تاريخ المغادرة </p>
+                            <label class="check checkOut" for="pickercheck" disabled>
+                                <i class="icon_date"></i>
+                                <input type="text" id="pickercheck" class="form-control hide" disabled readonly>
+                            </label>
+                        </div>
+                        <div class="fit mytype">
+                            <p>نوع الحجز</p>
+                            <label for="none" class="reserveType" disabled>
+                                <div><i class="icon_bed"></i><input id="option" type="text" class="Option" readonly></div>
+                            </label>
+                        </div>
+                        <div class="fit clearfix">
+                            <p>عدد الأشخاص</p>
+                            <button id="personNo" class="personNo" disabled>
+                                <div><i class="icon_person_no"></i><input type="text" class="num1" readonly></div>
+                            </button>
+
+                        </div>
+                        <div class="fit">
+                            <p>عدد الأطفال</p>
+                            <button id="childNo" class="childNo" disabled>
+                                <div><i class="icon_child_no"></i><input type="text" class="num2" readonly></div>
+                            </button>
+
+                        </div>
+                        <div class="fit">
+                            <p>بحث</p>
+                            <a href="../pages/search_result.html" id="disabled" onclick="return false;" target="_blank"><label id="search" class="search">
+                                    <div><i class="icon_search"></i></div>
+                                </label></a>
+                        </div>
+                    </ul>
+                    <div class="type hidden">
+                        <div class="dropdownres">
+                            <button onclick="myFunction()" class="dropbtn hiddenType" id="btns"></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a class="resType" href="#home">غرفة <i class="icon_bed"></i></a>
+                                <a class="resType" href="#about">جناح <i class="icon_wing"></i></a>
+                                <a class="resType" href="#contact">شقة <i class="icon_aparement"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nomber" class="nomber  hidden">
+                        <div class="dropdownPerson">
+                            <div class="incriment">
+                                <a><i id="incperson" class="fa fa-angle-up up"></i>
+                                    <span class="person" id="person">1</span>
+                                    <i id="decperson" class="fa fa-angle-down down"></i></a>
+                            </div>
+                            <span>عدد البالغين</span>
+                        </div>
+                        <i class="fa next_step fa-check"></i>
+                    </div>
+                    <div id="nomb" class="nomber hidden">
+                        <div class="dropdownPerson">
+                            <div class="incriment">
+                                <a><i id="inchild" class="fa fa-angle-up up"></i>
+                                    <span class="person" id="child">0</span>
+                                    <i id="dechild" class="fa fa-angle-down down"></i></a>
+                            </div>
+                            <span>عدد الأطفال</span>
+                        </div>
+                        <i class="fa next_step_child fa-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="content myhotel">
+            <div class="myhotelMap">
+                <img>
+                <div>
+                    <input type="text" class="latValue hidden" value="21.422510" />
+                    <input type="text" class="lngValue hidden" value="39.826168" />
+                    <i class="icon_location"></i>
+                    <a onclick="MapLinkClicked(this)"><span>إعرض الخريطة</span></a>
+                </div>
+            </div>
+            <div class="myhotelName">
+                <p id="myhotelName">منتجع ويسترن جاردن جدة</p>
+                <div>
+                    <a>
+                        <i class="icon_location"></i>
+                        <span>الشاطيء جدة</span>
+                    </a>
+                    <a>
+                        <i class="icon_location"></i>
+                        <span>من الحرم المكي</span>
+                        <span class="coloredspan">5</span>
+                        <span class="coloredspan">KM</span>
+                        
+                    </a>
+                </div>
+                
+            </div>
+            <div class="myhotelinfo">
+                <div class="myhotelAction">
+                  <a><i class="icon_notifications"></i></a>
+                  <a><i class="fa fa-heart"></i></a>
+                  <a><i class="icon_share"></i></a>                  
+                </div>
+                <div class="myhotelRate">
+                    <aside>
+                        <p class="my_rate">جيد جداً</p>
+                        <article onclick="evalShow(this)" onmouseout="evalhide(this)" onmouseover="evalShow(this)" >
+                            <p class="hotelcolor">6.0</p>
+                            <p class="hotelghost"><span>145</span><span>تقييم</span></p>
+                            <div class="evalcontainer hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInput hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafek"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInput hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="quality"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInput hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="price"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInput hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="clean"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInput hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="site"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInput hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="serve"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                          
+                        </article>
+                    </aside>
+                    <aside>
+                        <div class="my_ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <article  onclick="compareShow(this)" onmouseout="comparehide(this)" onmouseover="compareShow(this)" >
+                            <p>أفضل من</p>
+                            <h2>95%</h2>
+                            <p>من عقارات المدينة</p>
+                            <div class="evalcontainercompare hidezero">
+                                <div class="evalpose">
+                                    <div>
+                                        <input value="9" class="marafekInputcompare hidden" />
+                                        <p><span class="evalItem">المرافق</span><span class="marafekValuecompare">6.0</span></p>
+                                        <div>
+                                            <figure class="marafekcompare"></figure>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input value="8" class="qualityInputcompare hidden" />
+                                        <p><span class="evalItem">جودة الغرف</span><span class="qualityValuecompare">6.0</span></p>
+                                        <div>
+                                            <figure class="qualitycompare"></figure>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input value="7" class="priceInputcompare hidden" />
+                                        <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValuecompare">6.0</span></p>
+                                        <div>
+                                            <figure class="pricecompare"></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="evalpose">
+                                    <div>
+                                        <input value="6" class="cleanInputcompare hidden" />
+                                        <p><span class="evalItem">النظافة</span><span class="cleanValuecompare">6.0</span></p>
+                                        <div>
+                                            <figure class="cleancompare"></figure>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input value="5" class="siteInputcompare hidden" />
+                                        <p><span class="evalItem">الموقع</span><span class="siteValuecompare">6.0</span></p>
+                                        <div>
+                                            <figure class="sitecompare"></figure>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input value="4" class="serveInputcompare hidden" />
+                                        <p><span class="evalItem">الخدمة</span><span class="serveValuecompare">6.0</span></p>
+                                        <div>
+                                            <figure class="servecompare"></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </aside>
+                </div>
+            </div>
+        </div>        
+    </section>   
+    
+    <div class="clearfix content mainImg">
+        <div class="hotelImg">
+            <img src="../resources/img/hotelgallery/hotel_1.jpg">
+            <div class="copon"><p>كوبون الخصم</p><span>40%</span></div>
+            <div class="discnthotel"><p>خصم</p><span>80%</span><span>اكتشف عروضنا</span></div>
+            <div class="followP"><p>رجاء متابعة الفندق لتحصل على كوبونات الخصم بشكل مستمر</p></div>
+        </div>
+        <div class="aside">
+            <div class="roomImg">
+                <img src="../resources/img/roomgalary/room_1.jpg">
+            </div>
+            <div class="extraImg">
+                <div class="serImg">
+                    <img src="../resources/img/servicesgalary/ser_1.jpg">
+                </div>
+                <div class="attrImg">
+                    <img src="../resources/img/attractregions/attr_1.jpg">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <nav>
+        <div class="wrapper clearfix">
+            <div class="nav_menu">
+                <nav class="main_nav">
+                    <ul class="content">
+                        
+                        <li><a id="rom" class="menuselect active mainmenu">
+                                <p>خيارات الغرفة</p>
+                            </a>
+                        </li>
+                        <li><a id="hot" class="menuselect">
+                                <p>عن الفندق</p>
+                            </a></li>
+                        <li><a id="serv" class="menuselect">
+                                <p>خدمات الفندق </p>
+                            </a></li>
+                        <li><a id="accomp"  class="menuselect">
+                                <p>مرافق الفندق</p>
+                            </a></li>
+                        <li><a id="reg" class="menuselect">
+                                <p>المعالم القريبة</p>
+                            </a>
+                        </li>
+                        <li><a id="clckval" class="menuselect">
+                                <p>التقييمات </p>
+                            </a>
+                        </li>
+                        <div class="pageTimer">
+                            <h2>عدد الغرف</h2>
+                            <h3>0</h3>
+                            <p>الوقت المتبقي لتحديث الصفحة</p>
+                            <span id="timer"></span>
+                        </div>
+                        <div class="reserveNow">
+                          <a>احجز</a>
+                        </div>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </nav>
+    <section class="clearfix content" >
+        <div class="myInclude">            
+            <h2>أريد خيارات تتضمن</h2>
+            <div class="include">
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div> 
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                <div class="f_options">
+                    <label class="container">
+                        <input onclick="myClickBox(this)" type="checkbox">
+                        <figure class="checkmark"></figure>
+                        توفر محطة حافلات
+                    </label>
+                    <p class="myvalue">100</p>
+                </div>
+                
+            </div>        
+        </div>
+    
+    </section>
+    <section id="roomOptions" class="clearfix"> 
+                    <div class="Myhot_title content"><i class="fa fa-dot-circle-o"></i><span>خيارات الغرف</span><figure>(24)</figure><span>غرفة متاحة</span></div>
+<!--       search rooms       -->
+        <div class="MyMainRoom content clearfix">
+                    <div class="roomHotel"> 
+                        
+                            <div class="main_container clearfix">
+                                <div class="offer clearfix">
+                                    <input class="hidden" id="mydeadline" type="datetime" value="Jan 30, 2020 23:45:25" />
+                                    <div class="offercontent"><span class="offerTime"></span><span>مدة انتهاء العرض</span><span>عرض حصري من ويسترن جاردن خصم 80% شامل الإفطار و العشاء بادر بالحجز</span></div>
+                                </div>
+                            <div class="res_container">
+                                <div class="room clearfix">
+                                    <div class="image_container"><span class="gradient"></span><img class="parentImage" src="../resources/img/room_1.png" /></div>
+                                    <a onclick="nextimage(this)"><i class="next fa fa-angle-right"></i></a>
+                                    <a onclick="previmage(this)"><i class="next fa fa-angle-left"></i></a>
+                                    <ul id="galary" class="galary">
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb  current" src="../resources/img/room_1.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_2.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_3.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_4.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_1.png" /></a></li>
+                                    </ul>
+                                </div>
+                                <div class="res_content clearfix">
+                                    <div class="midHotel clearfix">
+                                        <h2>عادية مزدوجة (Standard Double)</h2>
+                                        <p class="sideTitle">السعر يشمل</p>
+                                        <div class="midHotelFlex">
+                                            <div>
+                                                <div>
+                                                    <span class="myspan">خدمات تنظيف</span>
+                                                    <span class="myspan">دش و بانيو</span>
+                                                    <span class="myspan">خدمات متنوعة</span>
+                                                </div>
+                                                <div>
+                                                    <span class="myspan">خدمات تنظيف</span>
+                                                    <span class="myspan">دش و بانيو</span>
+                                                    <span class="myspan">خدمات متنوعة</span>
+                                                </div>
+                                            </div>
+                                            <a class="hotelRoomCount">
+                                                 <div class="inlineBlock clearfix">عدد الغرف</div>  
+                                                <div class="myIncDec clearfix">
+                                                    <i onclick="incRoom(this)" class="fa fa-angle-up"></i>
+                                                    <p class="myroomNo">1</p>
+                                                    <input class="roomNo hidden" type="number" min="1" max="5" value="1" readonly />
+                                                    <i onclick="decRoom(this)" class="fa fa-angle-down"></i>
+                                                </div>
+                                                 
+                                            </a>
+                                            
+                                        </div> 
+                                        <div class="roomPrice">
+                                                <figure>سعر الليلة </figure>
+                                                <figure id="roomCurrency">SAR</figure>
+                                                <figure>1220</figure>
+                                                <figure>+</figure>
+                                                <figure>300</figure>
+                                                <figure>ضرائب ورسوم</figure>
+                                        </div> 
+                                    </div>
+                                    <div class="mysep clearfix"></div>
+                                    <div class="leftHotel clearfix">
+                                        <a class="chat"><p>إسأل عن هذه الغرفة</p> <i class="fa fa-wechat"></i></a>  
+                                        <span class="hotDiscount">خصم<br> %30</span> 
+                                        <figure class="nopay">لن تدفع أي شيء اليوم</figure> 
+                                        <div class="resInfoHotel">                                            
+                                            <img src="../resources/img/timer.svg"><span>تم أخر حجز منذ <figure>44</figure> دقيقة</span>
+                                        </div>
+                                    </div>
+                                    <div class="reserver">
+                                        <article>
+                                            <a onclick="showRoomOptions(this)" class="buttonfull roomOptn clearfix">
+                                                <i class="fa fa-angle-down"></i>
+                                                مزايا الغرفة
+                                            </a>
+                                            
+                                            <a class="buttonfull endreserve">أضف إلى الحجز</a>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="myroomOptions hidden">
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الطعام</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_1.svg">
+                                                <span>زجاجة مياه مجانية</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_2.svg">
+                                                <span>ثلاجة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_3.svg">
+                                                <span>ماكينة قهوة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_4.svg">
+                                                <span>ميني بار</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_5.svg">
+                                                <span>غسالة صحون</span>
+                                            </li>
+                                            
+                                            
+                                           
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">مرافق الراحة</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/relax_acomp/icon_5_1.svg">
+                                                <span>تكييف</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/relax_acomp/icon_5_2.svg">
+                                                <span>منبة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/relax_acomp/icon_5_3.svg">
+                                                <span>بياضات</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>                                
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الحمام ومستلزمات العناية الشخصية</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_1.svg">
+                                                <span>مناشف</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_2.svg">
+                                                <span>مرآة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_3.svg">
+                                                <span>مجفف شعر</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_4.svg">
+                                                <span>روب حمام</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_5.svg">
+                                                <span>مستلزمات التجميل</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">وسائل الترفية</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/entertainment/icon_6_1.svg">
+                                                <span>تليفون</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/entertainment/icon_6_2.svg">
+                                                <span>واي فاي</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/entertainment/icon_6_3.svg">
+                                                <span>ستاليت</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                 <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الامن والأمان</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/safety/icon_1.svg">
+                                                <span>خزنة داخل الغرفة</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الملابس</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/clothes/icon_4.svg">
+                                                <span>خزانة ملابس</span>
+                                            </li>                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
+                        
+                    </div>
+            
+        </div> 
+<!--        end room      -->  
+        <!--       search rooms       -->
+        <div class="MyMainRoom content clearfix">
+                    <div class="roomHotel"> 
+                        
+                        <div class="main_container clearfix">
+                            <div class="offer clearfix">
+                                    <input class="hidden" id="mydeadline" type="datetime" value="Jan 26, 2020 23:45:25" />
+                                    <div class="offercontent"><span class="offerTime"></span><span>مدة انتهاء العرض</span><span>عرض حصري من ويسترن جاردن خصم 80% شامل الإفطار و العشاء بادر بالحجز</span></div>
+                                </div>
+                            <div class="res_container">
+                                <div class="room clearfix">
+                                    <div class="image_container"><span class="gradient"></span><img class="parentImage" src="../resources/img/room_1.png" /></div>
+                                    <a onclick="nextimage(this)"><i class="next fa fa-angle-right"></i></a>
+                                    <a onclick="previmage(this)"><i class="next fa fa-angle-left"></i></a>
+                                    <ul id="galary" class="galary">
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb  current" src="../resources/img/room_1.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_2.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_3.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_4.png" /></a></li>
+                                        <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_1.png" /></a></li>
+                                    </ul>
+                                </div>
+                                <div class="res_content clearfix">
+                                    <div class="midHotel clearfix">
+                                        <h2>عادية مزدوجة (Standard Double)</h2>
+                                        <p class="sideTitle">السعر يشمل</p>
+                                        <div class="midHotelFlex">
+                                            <div>
+                                                <div>
+                                                    <span class="myspan">خدمات تنظيف</span>
+                                                    <span class="myspan">دش و بانيو</span>
+                                                    <span class="myspan">خدمات متنوعة</span>
+                                                </div>
+                                                <div>
+                                                    <span class="myspan">خدمات تنظيف</span>
+                                                    <span class="myspan">دش و بانيو</span>
+                                                    <span class="myspan">خدمات متنوعة</span>
+                                                </div>
+                                            </div>
+                                            <a class="hotelRoomCount">
+                                                 <div class="inlineBlock clearfix">عدد الغرف</div>  
+                                                <div class="myIncDec clearfix">
+                                                    <i onclick="incRoom(this)" class="fa fa-angle-up"></i>
+                                                    <p class="myroomNo">1</p>
+                                                    <input class="roomNo hidden" type="number" min="1" max="5" value="1" readonly />
+                                                    <i onclick="decRoom(this)" class="fa fa-angle-down"></i>
+                                                </div>
+                                                 
+                                            </a>
+                                            
+                                        </div> 
+                                        <div class="roomPrice">
+                                                <figure> سعر الليلة </figure>
+                                                <figure id="roomCurrency">SAR</figure>
+                                                <figure>1220</figure>
+                                                <figure>+</figure>
+                                                <figure>300</figure>
+                                                <figure>ضرائب ورسوم</figure>
+                                        </div> 
+                                    </div>
+                                    <div class="mysep clearfix"></div>
+                                    <div class="leftHotel clearfix">
+                                        <a class="chat"><p>إسأل عن هذه الغرفة</p> <i class="fa fa-wechat"></i></a>  
+                                        <span class="hotDiscount">خصم<br> %30</span> 
+                                        <figure class="nopay">لن تدفع أي شيء اليوم</figure> 
+                                        <div class="resInfoHotel">                                            
+                                            <img src="../resources/img/timer.svg"><span>تم أخر حجز منذ <figure>44</figure> دقيقة</span>
+                                        </div>
+                                    </div>
+                                    <div class="reserver">
+                                        <article>
+                                            <a onclick="showRoomOptions(this)" class="buttonfull roomOptn clearfix">
+                                                <i class="fa fa-angle-down"></i>
+                                                مزايا الغرفة
+                                            </a>
+                                            
+                                            <a class="buttonfull endreserve">أضف إلى الحجز</a>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="myroomOptions hidden">
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الطعام</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_1.svg">
+                                                <span>زجاجة مياه مجانية</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_2.svg">
+                                                <span>ثلاجة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_3.svg">
+                                                <span>ماكينة قهوة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_4.svg">
+                                                <span>ميني بار</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/food/icon3_5.svg">
+                                                <span>غسالة صحون</span>
+                                            </li>
+                                            
+                                            
+                                           
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">مرافق الراحة</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/relax_acomp/icon_5_1.svg">
+                                                <span>تكييف</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/relax_acomp/icon_5_2.svg">
+                                                <span>منبة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/relax_acomp/icon_5_3.svg">
+                                                <span>بياضات</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>                                
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الحمام ومستلزمات العناية الشخصية</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_1.svg">
+                                                <span>مناشف</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_2.svg">
+                                                <span>مرآة</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_3.svg">
+                                                <span>مجفف شعر</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_4.svg">
+                                                <span>روب حمام</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/bathroom/icon_2_5.svg">
+                                                <span>مستلزمات التجميل</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">وسائل الترفية</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/entertainment/icon_6_1.svg">
+                                                <span>تليفون</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/entertainment/icon_6_2.svg">
+                                                <span>واي فاي</span>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/entertainment/icon_6_3.svg">
+                                                <span>ستاليت</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                 <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الامن والأمان</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/safety/icon_1.svg">
+                                                <span>خزنة داخل الغرفة</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Options_Flex">
+                                    <div class="features_Details">
+                                        <p class="feature_title">الملابس</p>
+                                        <ul>
+                                            <li>
+                                                <img src="../resources/img/roomOptionsimg/clothes/icon_4.svg">
+                                                <span>خزانة ملابس</span>
+                                            </li>                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
+                        
+                    </div>
+            
+        </div> 
+<!--        end room      -->  
+        
+        <div class="content"><a onclick="allrooms(this)" class="buttonfull allRooms" id="allRooms">جميع الغرف</a></div>
+       <!--       hotel rooms - wings - appartemet available  الغرف و الأجنحة و الشقق المتاحة      -->
+        <div class="availPlace content hidden">
+            <p class="availTitle">الغرف المتاحة</p>
+            <ul>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">غرفة دوبلكس مزدوجة</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                      
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                 <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">غرفة دوبلكس مزدوجة</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">غرفة دوبلكس مزدوجة</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                      
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">غرفة دوبلكس مزدوجة</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">غرفة دوبلكس مزدوجة</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">غرفة دوبلكس مزدوجة</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+              
+            </ul>
+        </div>
+        <div class="availPlace content hidden">
+            <p class="availTitle">الأجنحة المتاحة</p>
+            <ul>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">جناح دوبلكس</p>
+                           <p class="placeDesc">مجدد حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                 <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">جناح دوبلكس</p>
+                           <p class="placeDesc">مجدد حديثا</p>
+                       </article>                      
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">جناح دوبلكس</p>
+                           <p class="placeDesc">مجدد حديثا</p>
+                       </article>                      
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">جناح دوبلكس</p>
+                           <p class="placeDesc">مجدد حديثا</p>
+                       </article>
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">جناح دوبلكس</p>
+                           <p class="placeDesc">مجدد حديثا</p>
+                       </article>
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">جناح دوبلكس</p>
+                           <p class="placeDesc">مجدد حديثا</p>
+                       </article>  
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+              
+            </ul>
+        </div>
+        <div class="availPlace content hidden">
+            <p class="availTitle">الشقق المتاحة</p>
+            <ul>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">شقة دوبلكس</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">شقة دوبلكس</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">شقة دوبلكس</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">شقة دوبلكس</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">شقة دوبلكس</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                <li>
+                   <a class="roomDetailEnter">شاهد التفاصيل</a>
+                   <div class="gradientImg"></div>
+                   <img class="placeImage" src="../resources/img/room_1.png">
+                   <div class="placeDetails">
+                       <article>
+                           <p class="placeTitle">شقة دوبلكس</p>
+                           <p class="placeDesc">مجددة حديثا</p>
+                       </article>                       
+                       <div><img src="../resources/img/roomsize.svg"><span>حجم الغرفة: 60 متر مربع</span></div>
+                       <div><img src="../resources/img/personSymbol.svg" ><span>تتسع لعدد: 4 أفراد</span></div>
+                       <div><img src="../resources/img/bedSymbol.svg" ><span>عدد 2 اسرة مزدوجة</span></div>
+                       <p class="enterdate">أدخل التواريخ لمشاهدة الأسعار</p>
+                       <figure></figure>
+                   </div>
+                </li>
+                
+                
+              
+            </ul>
+        </div>        
+
+           
+    </section>
+    <section id="aboutHotel" class="clearfix margins hotelServices">
+            <div class="Myhot_title content"><i class="fa fa-dot-circle-o"></i><span>عن الفندق</span></div> 
+            <div class="content about">
+                <aside>
+                    <div class="briefAbout">
+                        <div class="infos"><i class="fa fa-dot-circle-o"></i><span>نبذة عن الفندق</span></div>
+                        <article>
+                            يقع منتجع ويسترن جاردن جدة في مكة المكرمة على بعد 3.5 كم من أبراج البيت وعلى بعد 3.6 كم من برج الصفوة،
+                            يقع الفندق على بعد حوالي 3.8 كم من المسجد الحرام و5 كم من جامعة أم القرى. يقع مكان الإقامة على بعد 6 كم
+                            من مكة مول وعلى بعد 7 كم من منى. وسيسعد موظفو مكتب الاستقبال بتقديم المشورة للضيوف عند الحاجة إلى التوجيهات.
+                            يقع كهف على بعد 9 كم من الفندق. ويقع مطار الطائف الإقليمي على بعد 75 كم من مكان الإقامة.نحن نتكلم لغتك!
+                        </article>
+                    </div>
+                    <div class="briefAbout">
+                        <div class="infos"><i class="fa fa-dot-circle-o"></i><span>نبذة عن الفندق</span></div>
+                        <article>
+                            يقع منتجع ويسترن جاردن جدة في مكة المكرمة على بعد 3.5 كم من أبراج البيت وعلى بعد 3.6 كم من برج الصفوة،
+                            يقع الفندق على بعد حوالي 3.8 كم من المسجد الحرام و5 كم من جامعة أم القرى. يقع مكان الإقامة على بعد 6 كم
+                            من مكة مول وعلى بعد 7 كم من منى. وسيسعد موظفو مكتب الاستقبال بتقديم المشورة للضيوف عند الحاجة إلى التوجيهات.
+                            يقع كهف على بعد 9 كم من الفندق. ويقع مطار الطائف الإقليمي على بعد 75 كم من مكان الإقامة.نحن نتكلم لغتك!
+                        </article>
+                    </div>
+                </aside>
+                <aside>
+                    <p>التصنيف العام</p>
+                    <div class="Separator">
+                        <div>
+                            <figure>أفضل من</figure>
+                            <h2>95%</h2>
+                            <figure>من عقارات المدينة</figure>
+                        </div>
+                        
+                    </div>
+                    <ul>
+                        <li><span>افضل من 95% من عقارات المدينة </span><figure>النظافة</figure></li>
+                        <li><span>افضل من 95% من عقارات المدينة </span><figure>جودة الغرف</figure></li>
+                        <li><span>افضل من 95% من عقارات المدينة </span><figure>الخدمة</figure></li>
+                        <li><span>افضل من 95% من عقارات المدينة </span><figure>الموقع</figure></li>
+                        <li><span>افضل من 95% من عقارات المدينة </span><figure>المرافق</figure></li>
+                        <li><span>افضل من 95% من عقارات المدينة </span><figure>الجودة مقابل السعر</figure></li>
+                    </ul>
+                </aside>
+                
+            </div>
+    </section>
+    <section id="hotelServices" class="clearfix margins">
+        <div class="Myhot_title content"><i class="fa fa-dot-circle-o"></i><span>خدمات الفندق</span></div>        
+        <div class="content">
+            <div class="main_options">
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">خدمة الانترنت</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/internet/icon_3.svg">
+                                <span>واي فاي بالمناطق العامة</span>
+                            </li>                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">الطعام والمشروبات </p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/food/icon2_1.svg">
+                                <span>خدمة 24 ساعة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/food/icon2_2.svg">
+                                <span>مقهي</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/food/icon2_3.svg">
+                                <span>متجر</span>
+                            </li>                            
+                            <li>
+                                <img src="../resources/img/hotelServices_img/food/icon2_4.svg">
+                                <span>مطعم</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">استفد من</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/use/icon_5_1.svg">
+                                <span>تخزين الامتعة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/use/icon_5_2.svg">
+                                <span>تغيير العملات</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/use/icon_5_3.svg">
+                                <span>خدمة تنظيف يوميا</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/use/icon_5_4.svg">
+                                <span>مكتبة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/use/icon_5_5.svg">
+                                <span>سحب نقدي</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/use/icon_5_6.svg">
+                                <span>خدمة غسيل الملابس</span>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">خدمة التنقلات</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/transfere/icon_4_1.svg">
+                                <span>تأجير سيارات</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/transfere/icon_4_2.svg">
+                                <span>التوصيل من المطار</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/transfere/icon_4_3.svg">
+                                <span>موقف سيارات</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">خاص بالأطفال</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/child/icon_1_1.svg">
+                                <span>ملعب للأطفال</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelServices_img/child/icon_1_2.svg">
+                                <span>نادي للأطفال</span>
+                            </li>
+                                                      
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section id="hotelAccomp" class="clearfix margins hotelServices">
+        <div class="Myhot_title content"><i class="fa fa-dot-circle-o"></i><span>مرافق الفندق</span></div>        
+        <div class="content">
+            <div class="main_options">
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">نشاطات</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/activity/icon_7_1.svg">
+                                <span>مسبح</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/activity/icon_7_2.svg">
+                                <span>جاكوزي</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/activity/icon_7_3.svg">
+                                <span>مساج</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/activity/icon_7_4.svg">
+                                <span>مركز لياقة بدنية</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">الطعام</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/food/icon3_1.svg">
+                                <span>زجاجة مياه مجانية</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/food/icon3_2.svg">
+                                <span>ثلاجة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/food/icon3_3.svg">
+                                <span>ماكينة قهوة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/food/icon3_4.svg">
+                                <span>ميني بار</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/food/icon3_5.svg">
+                                <span>غسالة صحون</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">مرافق الراحة</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/relax_acomp/icon_5_1.svg">
+                                <span>تكييف</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/relax_acomp/icon_5_2.svg">
+                                <span>منبة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/relax_acomp/icon_5_3.svg">
+                                <span>بياضات</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>               
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">الحمام ومستلزمات العناية الشخصية</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/bathroom/icon_2_1.svg">
+                                <span>مناشف</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/bathroom/icon_2_2.svg">
+                                <span>مرآة</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/bathroom/icon_2_3.svg">
+                                <span>مجفف شعر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/bathroom/icon_2_4.svg">
+                                <span>روب حمام</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/bathroom/icon_2_5.svg">
+                                <span>مستلزمات التجميل</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">وسائل الترفية</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/entertainment/icon_6_1.svg">
+                                <span>تليفون</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/entertainment/icon_6_2.svg">
+                                <span>واي فاي</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/entertainment/icon_6_3.svg">
+                                <span>ستاليت</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">الامن والأمان</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/safety/icon_1.svg">
+                                <span>خزنة داخل الغرفة</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">الملابس</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/hotelAcomp/clothes/icon_4.svg">
+                                <span>خزانة ملابس</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="closeRegions" class="clearfix margins">
+        <div class="Myhot_title content"><i class="fa fa-dot-circle-o"></i><span>المعالم القريبة</span></div> 
+        <div class="content">
+            <div class="main_options">                
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">معالم دينية</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">معالم أثرية</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li> 
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">حدائق و متنزهات</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li> 
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="Options_Flex">
+                    <div class="features_Details">
+                        <p class="feature_title">طرق</p>
+                        <ul>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li> 
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            <li>
+                                <img src="../resources/img/region.svg">
+                                <span>نص افتراضي 120 متر</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section id="hotelEvals" class="clearfix margins hotelServices">
+        <div class="Myhot_title content"><i class="fa fa-dot-circle-o"></i><span>التقييمات</span></div> 
+        <div class="content">
+            <article>
+                <aside>
+                    <p>التقييم العام</p>
+                     <div class="mybtevalNo">
+                            <figure>6.0</figure>
+                            
+                            <div>
+                                <span>جيد جداّ</span>
+                                <div class="btevalNo"><span>145</span><span>تقييم</span></div>
+                            </div>
+                     </div> 
+                    <ul>                       
+                       
+                        <li>
+                            <input id="btClean" type="number" class="hidden" value="10">
+                            <input id="btMarafek" type="number" class="hidden" value="5.2">
+                            <input id="btService" type="number" class="hidden" value="6.2">
+                            <input id="btLocation" type="number" class="hidden" value="7.3">
+                            <input id="btQuality" type="number" class="hidden" value="8.4">
+                            <input id="btqualityPr" type="number" class="hidden" value="9.1">
+                            <div class="btEvalPose">
+                                <div>
+                                    <div class="btEval"><figure>6.0</figure><span>" النظافة "</span></div>                                    
+                                    <div id="btUpclean"  class="btUpGreen"></div>
+                                    <div class="btUpGrey"></div>
+                                   
+                                    
+                                </div>
+                                <div>
+                                    <div class="btEval"><figure>6.0</figure><span>" الموقع "</span></div>
+                                    <div id="btUploc" class="btUpGreen"></div>
+                                    <div class="btUpGrey"></div>
+                                    
+                                </div>
+                                <div>
+                                    <div class="btEval"><figure>6.0</figure><span>" الخدمة "</span></div>
+                                    <div id="btUpserv" class="btUpGreen"></div>
+                                    <div class="btUpGrey"></div>
+                                </div>
+                            </div>
+                            <div class="btEvalPose">
+                                <div>
+                                    <div class="btEval"><figure>6.0</figure><span>" المرافق "</span></div>                                    
+                                   <div id="btUpmarafek" class="btUpGreen"></div>
+                                    <div class="btUpGrey"></div>
+                                </div>
+                                <div>
+                                    <div class="btEval"><figure>6.0</figure><span>" جودة الغرف "</span></div>
+                                    <div id="btUpQuality" class="btUpGreen"></div>
+                                    <div class="btUpGrey"></div>
+                                </div>
+                                <div>
+                                    <div class="btEval"><figure>6.0</figure><span>" الجودة مقابل السعر "</span></div>
+                                    <div id="btUpPrice" class="btUpGreen"></div>
+                                    <div class="btUpGrey"></div>
+                                </div>
+                            </div>
+                        
+                        </li>
+                    </ul>
+                </aside>
+                <aside>
+                    <p>فلترة التقييم</p>
+                    <div class="article">
+                        <div class="btInclude include">
+                            <div class="f_options">
+                                <label class="container">
+                                    <input onclick="myClickBox(this)" type="checkbox">
+                                    <figure class="checkmark"></figure>
+                                    <div><span>رائع</span><span>9+</span></div>
+                                </label>
+                            </div>
+                            <div class="f_options">
+                                <label class="container">
+                                    <input onclick="myClickBox(this)" type="checkbox">
+                                    <figure class="checkmark"></figure>
+                                    <div><span>ممتاز</span><span>8-9</span></div>
+                                </label>
+                            </div>
+                            <div class="f_options">
+                                <label class="container">
+                                    <input onclick="myClickBox(this)" type="checkbox">
+                                    <figure class="checkmark"></figure>
+                                    <div><span>جيد جداً</span><span>7-8</span></div>
+                                </label>
+                            </div>
+                            <div class="f_options">
+                                <label class="container">
+                                    <input onclick="myClickBox(this)" type="checkbox">
+                                    <figure class="checkmark"></figure>
+                                    <div><span>جيد </span><span>6-7</span></div>
+                                </label>
+                            </div>
+                            <div class="f_options">
+                                <label class="container">
+                                    <input onclick="myClickBox(this)" type="checkbox">
+                                    <figure class="checkmark"></figure>
+                                    <div><span>أقل من جيد</span><span>6</span></div>
+                                </label>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>95</li>
+                            <li>95</li>
+                            <li>95</li>
+                            <li>95</li>
+                            <li>95</li>
+                        </ul>
+                    </div>
+                </aside>
+               
+            </article>
+        </div>
+        
+    </section>
+   
+    <div class="evalFilter">
+        <div class="content">
+            <ul>
+                <li>
+                    <i  onclick="showFilterP()" class="mydropbtn fa fa-angle-down"></i>
+                    <p class="mydropbtn" onclick="showFilterP()">أنواع المسافرين</p>
+                    <div id="dropcontbtn" class="hidden dropcontbtn">
+                        <a onclick="choseData(this)">فرد</a>
+                        <a onclick="choseData(this)">مجموعة</a>
+                        <a onclick="choseData(this)">عائلة</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <i  onclick="showFilterType()" class="mydropBT  fa fa-angle-down"></i>
+                    <p class="mydropBT" onclick="showFilterType()">نوع الحجز</p>
+                    <div id="dropcontBT"  class="hidden dropcontBT">
+                        <a onclick="choseData(this)">غرفة</a>
+                        <a onclick="choseData(this)">جناح</a>
+                        <a onclick="choseData(this)">شقة</a>
+                    </div> 
+                </li>  
+                <li>
+                    <i  onclick="showFilterLng()" class="mydropBTN  fa fa-angle-down"></i>
+                    <p class="mydropBTN" onclick="showFilterLng()">اللغة</p>
+                    <div id="dropcontBTN" class="hidden dropcontBTN">
+                        <a onclick="choseData(this)">العربية</a>
+                        <a onclick="choseData(this)">الأنجليزية</a>
+                        <a onclick="choseData(this)" id="translate">لغات أخرى </a>
+                    </div> 
+                </li>                
+            </ul>
+            </div>
+    </div>
+    
+    
+
+
+
+  
+    <section  class="clearfix evalResult">
+        <div class="content">
+            <ul>
+                <li>
+                    <div class="evalresultP">
+                        <aside>
+                            <img src="../resources/img/room_1.png">
+                            <span>Ahmad salama</span>
+                        </aside>  
+                        <p>جيد جداً</p>
+                    </div>
+                    <div class="evalresulType">
+                        <article>
+                            <div>
+                                <span>زوجان</span><i class="fa fa-dot-circle-o"></i>
+                            </div>
+                            <div>
+                                <span>غرفة فردي</span><i class="fa fa-dot-circle-o"></i>
+                            </div>
+                            <div>
+                                <span>أقامة ليلة واحدة</span><i class="fa fa-dot-circle-o"></i>
+                            </div>
+
+                        </article>                    
+                    </div>
+                    
+                    <div class="evalresultLoc">
+                        <img src="../resources/img/location.svg">
+                        <span>مصر</span>
+                    </div>
+                </li>
+                <li>
+                   <div class="resultRate">
+                       <span>" جيد جداً "</span>
+                       <figure>6.0</figure>
+                   </div>
+                   <div class="resultMid">
+                       <p>نظافة الفندق وهدوء الموقع طاقم الفندق رائعين
+                           ومتعاونين كل التقدير والاحترام لهم
+                       </p>
+                   </div>
+                   <div class="resultEnd"><span>تم التقييم منذ</span><span>26/10</span></div>
+                
+                </li>
+                
+            </ul>  
+            <div class="CommentInquery clearfix">
+                <p>هل وجدت التعليق مفيدا؟</p>
+                <div>
+                    <a>نعم</a>
+                    <a>لا</a>
+                </div>                
+            </div>
+            <div class="Commentrespond clearfix">
+                   <p>تعليق الفندق</p>
+                    <span>ادارة الفندق</span>
+                    <div></div>
+            </div>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <div class="evalresultP">
+                        <aside>
+                            <img src="../resources/img/room_1.png">
+                            <span>Ahmad salama</span>
+                        </aside>  
+                        <p>جيد جداً</p>
+                    </div>
+                    <div class="evalresulType">
+                        <article>
+                            <div>
+                                <span>زوجان</span><i class="fa fa-dot-circle-o"></i>
+                            </div>
+                            <div>
+                                <span>غرفة فردي</span><i class="fa fa-dot-circle-o"></i>
+                            </div>
+                            <div>
+                                <span>أقامة ليلة واحدة</span><i class="fa fa-dot-circle-o"></i>
+                            </div>
+
+                        </article>                    
+                    </div>
+                    
+                    <div class="evalresultLoc">
+                        <img src="../resources/img/location.svg">
+                        <span>مصر</span>
+                    </div>
+                </li>
+                <li>
+                   <div class="resultRate">
+                       <span>" جيد جداً "</span>
+                       <figure>6.0</figure>
+                   </div>
+                   <div class="resultMid">
+                       <p>نظافة الفندق وهدوء الموقع طاقم الفندق رائعين
+                           ومتعاونين كل التقدير والاحترام لهم
+                       </p>
+                   </div>
+                   <div class="resultEnd"><span>تم التقييم منذ</span><span>26/10</span></div>
+                
+                </li>
+                
+            </ul>  
+            <div class="CommentInquery clearfix">
+                <p>هل وجدت التعليق مفيدا؟</p>
+                <div>
+                    <a>نعم</a>
+                    <a>لا</a>
+                </div>                
+            </div>
+            <div class="Commentrespond clearfix">
+                   <p>تعليق الفندق</p>
+                    <span>ادارة الفندق</span>
+                    <div></div>
+            </div>
+        </div>
+        
+    
+    </section>
+      <div class="srch_content hotel_pages">
+        <div class="content">
+            <div class="nextPage">
+                <div class="srch_pages">
+                    <a><i class="fa fa-angle-left"></i></a>
+                    <a onclick="changePage(this)" class="page currentPage">1</a>
+                    <a onclick="changePage(this)" class="page">2</a>
+                    <a onclick="changePage(this)" class="page">3</a>
+                    <a onclick="changePage(this)" class="page">4</a>
+                    <a onclick="changePage(this)" class="page">5</a>
+                    <a onclick="changePage(this)" class="page">6</a>
+                    <a onclick="changePage(this)" class="page">7</a>
+                    <a onclick="changePage(this)" class="page">8</a>
+                    <a><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section>
+        <div class="clearfix content ">
+            <div class="container">
+                <p class="bestOffers sectiontitlecurved">عقارات تهمك</p>
+            </div>
+        </div>
+    </section>
+    <div class="srch_content">
+        <div class="clearfix content">
+            <aside class="map_filter clearfix mediaArea">              
+                <div><p>مساحة إعلانية</p></div>
+            </aside>
+            <aside class="hotel_srchres clearfix">   
+                <!--                room          --> 
+                
+                <div class="hotel_room ">
+                    <div class="main_container  clearfix">
+                        <div class="offer clearfix">
+                            <input class="hidden" id="mydeadline" type="datetime" value="Jan 25, 2020 23:45:25" />                            
+                            <div class="offercontent"><span class="offerTime"></span><span>مدة انتهاء العرض</span><span>عرض حصري من ويسترن جاردن خصم 80% شامل الإفطار و العشاء بادر بالحجز</span></div>                            
+                        </div>
+                        <div class="res_container">
+                            <div class="room">
+                                <div class="image_container"><span class="gradient"></span><img class="parentImage" src="../resources/img/room_1.png" /></div>
+                                <a onclick="nextimage(this)"><i class="next fa fa-angle-right"></i></a>
+                                <a onclick="previmage(this)"><i  class="next fa fa-angle-left"></i></a>
+                                <div class="share">
+                                    <ul class="clearfix">
+                                        <li><i class="fa fa-heart"></i></li>
+                                        <li><i class="icon_share"></i></li>
+                                    </ul>
+                                    <div class="follow">
+                                        <i class="icon_notifications"></i>
+                                        <p>متابعة</p>
+                                    </div>
+                                </div>
+                                <p class="ticket">الأكثر عرضا</p>
+                                <ul id="galary" class="galary">
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb  current" src="../resources/img/room_1.png" /><span>مشاهدة الصور</span></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_2.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_3.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_4.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_1.png" /></a></li>                                    
+                                </ul>
+                            </div>
+                            <div class="res_content">
+                                <div class="res_state clearfix">
+                                    <div class="hotel_info">
+                                        <span class="info_name">منتجع ويسترن جاردن جدة</span>
+                                        <span class="info_rate">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="location_content clearfix">
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location_basic.svg"></span><span>
+                                                <input type="text" class="latValue hidden" value="21.422510" />
+                                                <input type="text" class="lngValue hidden" value="39.826168" />
+                                                <a class="mapshow" onclick="MapLinkClicked(this)">إعرض على الخريطة</a>
+                                                الشاطيء, جدة
+                                            </span>
+                                        </div>
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location.svg"></span><span><a>5 km</a>من الحرم المكي</span>
+                                        </div>
+                                    </div>
+                                    <div class="service_info">
+                                        <span>موقع جيد جدا</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="service_info service">
+                                        <span>إفطار مجاني</span>
+                                        <span>مواصلات قريبة</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="more_service">
+                                        <img src="../resources/img/timer.svg">
+                                        <span>الأكثر مبيعا خلال <figure>48</figure> ساعة <figure>55</figure> مرة</span>                                        
+                                    </div>
+                                    <div class="price_info">
+                                        
+                                        <span>يبدأ سعر الليلة من <figure class="oldprice">1450</figure> <figure>1220&nbsp;</figure>&nbsp; + &nbsp;&nbsp;ضرائب و رسوم 300 </span>&nbsp;&nbsp;<figure class="new_currency">SAR</figure>
+                                        
+                                    </div>
+                                    <div class="reserve_info">
+                                       <a href="../pages/hotel.html">احجز</a>
+                                       <img src="../resources/img/timer.svg"><span>تم أخر حجز منذ <figure>44</figure> دقيقة</span>
+                                         
+                                    </div>
+                                    
+                                </div>
+                                <div class="separation clearfix"></div>
+                                <div class="evaluation clearfix">
+                                    <div class="main_eval">
+                                        <span onclick="evalShow(this)" onmouseout="evalhide(this)" onmouseover="evalShow(this)" class="eval">6.0</span><span><i class="evalIcon fa fa-angle-right"></i></span> 
+                                        <div class="evalcontainer hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInput hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafek"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInput hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="quality"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInput hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="price"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInput hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="clean"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInput hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="site"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInput hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="serve"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                    <p class="evalComment">جيد جداً</p>
+                                    <p class="evalNo">تقييم 145</p>
+                                    <div class="main_compare">                                        
+                                        <span onclick="compareShow(this)" onmouseout="comparehide(this)" onmouseover="compareShow(this)"  class="compare">
+                                            <p>أفضل من</p>
+                                            <p>95%</p>
+                                            <p>من عقارات المدينة</p>
+                                        </span>
+                                        <span><i class="compareIcon fa fa-angle-right"></i></span>
+                                        <div class="evalcontainercompare hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInputcompare hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafekcompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInputcompare hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="qualitycompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInputcompare hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="pricecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInputcompare hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="cleancompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInputcompare hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="sitecompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInputcompare hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="servecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="discount">%خصم 30</p>
+                                    
+                                </div>
+                             
+                            </div>
+                            
+                        </div>
+                    </div>                    
+                </div>
+                <div class="hotel_room clearfix">
+                    <div class="main_container  clearfix">
+                        <div class="offer clearfix">
+                            <input class="hidden" id="mydeadline" type="datetime" value="Jan 25, 2020 23:45:25" />                            
+                            <div class="offercontent"><span class="offerTime"></span><span>مدة انتهاء العرض</span><span>عرض حصري من ويسترن جاردن خصم 80% شامل الإفطار و العشاء بادر بالحجز</span></div>                            
+                        </div>
+                        <div class="res_container">
+                            <div class="room">
+                                <div class="image_container"><span class="gradient"></span><img class="parentImage" src="../resources/img/room_1.png" /></div>
+                                <a onclick="nextimage(this)"><i class="next fa fa-angle-right"></i></a>
+                                <a onclick="previmage(this)"><i  class="next fa fa-angle-left"></i></a>
+                                <div class="share">
+                                    <ul class="clearfix">
+                                        <li><i class="fa fa-heart"></i></li>
+                                        <li><i class="icon_share"></i></li>
+                                    </ul>
+                                    <div class="follow">
+                                        <i class="icon_notifications"></i>
+                                        <p>متابعة</p>
+                                    </div>
+                                </div>
+                                <p class="ticket">الأكثر عرضا</p>
+                                <ul id="galary" class="galary">
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb  current" src="../resources/img/room_1.png" /><span>مشاهدة الصور</span></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_2.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_3.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_4.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_1.png" /></a></li>                                    
+                                </ul>
+                            </div>
+                            <div class="res_content">
+                                <div class="res_state clearfix">
+                                    <div class="hotel_info">
+                                        <span class="info_name">منتجع ويسترن جاردن جدة</span>
+                                        <span class="info_rate">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="location_content clearfix">
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location_basic.svg"></span><span>
+                                                <input type="text" class="latValue hidden" value="21.422510" />
+                                                <input type="text" class="lngValue hidden" value="39.826168" />
+                                                <a class="mapshow" onclick="MapLinkClicked(this)">إعرض على الخريطة</a>
+                                                الشاطيء, جدة
+                                            </span>
+                                        </div>
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location.svg"></span><span><a>5 km</a>من الحرم المكي</span>
+                                        </div>
+                                    </div>
+                                    <div class="service_info">
+                                        <span>موقع جيد جدا</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="service_info service">
+                                        <span>إفطار مجاني</span>
+                                        <span>مواصلات قريبة</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="more_service">
+                                        <img src="../resources/img/timer.svg">
+                                        <span>الأكثر مبيعا خلال <figure>48</figure> ساعة <figure>55</figure> مرة</span>                                        
+                                    </div>
+                                    <div class="price_info">
+                                        
+                                        <span>يبدأ سعر الليلة من <figure class="oldprice">1450</figure> <figure>1220&nbsp;</figure>&nbsp; + &nbsp;&nbsp;ضرائب و رسوم 300 </span>&nbsp;&nbsp;<figure class="new_currency">SAR</figure>
+                                        
+                                    </div>
+                                    <div class="reserve_info">
+                                       <a href="../pages/hotel.html">احجز</a>
+                                       <img src="../resources/img/timer.svg"><span>تم أخر حجز منذ <figure>44</figure> دقيقة</span>
+                                         
+                                    </div>
+                                    
+                                </div>
+                                <div class="separation clearfix"></div>
+                                <div class="evaluation clearfix">
+                                    <div class="main_eval">
+                                        <span onclick="evalShow(this)" onmouseout="evalhide(this)" onmouseover="evalShow(this)" class="eval">6.0</span><span><i class="evalIcon fa fa-angle-right"></i></span> 
+                                        <div class="evalcontainer hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInput hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafek"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInput hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="quality"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInput hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="price"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInput hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="clean"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInput hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="site"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInput hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="serve"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                    <p class="evalComment">جيد جداً</p>
+                                    <p class="evalNo">تقييم 145</p>
+                                    <div class="main_compare">                                        
+                                        <span onclick="compareShow(this)" onmouseout="comparehide(this)" onmouseover="compareShow(this)"  class="compare">
+                                            <p>أفضل من</p>
+                                            <p>95%</p>
+                                            <p>من عقارات المدينة</p>
+                                        </span>
+                                        <span><i class="compareIcon fa fa-angle-right"></i></span>
+                                        <div class="evalcontainercompare hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInputcompare hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafekcompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInputcompare hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="qualitycompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInputcompare hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="pricecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInputcompare hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="cleancompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInputcompare hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="sitecompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInputcompare hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="servecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="discount">%خصم 30</p>
+                                    
+                                </div>
+                             
+                            </div>
+                            
+                        </div>
+                    </div>                    
+                </div>
+                <div class="hotel_room clearfix">
+                    <div class="main_container  clearfix">
+                        <div class="offer clearfix">
+                            <input class="hidden" id="mydeadline" type="datetime" value="Jan 25, 2020 23:45:25" />                            
+                            <div class="offercontent"><span class="offerTime"></span><span>مدة انتهاء العرض</span><span>عرض حصري من ويسترن جاردن خصم 80% شامل الإفطار و العشاء بادر بالحجز</span></div>                            
+                        </div>
+                        <div class="res_container">
+                            <div class="room">
+                                <div class="image_container"><span class="gradient"></span><img class="parentImage" src="../resources/img/room_1.png" /></div>
+                                <a onclick="nextimage(this)"><i class="next fa fa-angle-right"></i></a>
+                                <a onclick="previmage(this)"><i  class="next fa fa-angle-left"></i></a>
+                                <div class="share">
+                                    <ul class="clearfix">
+                                        <li><i class="fa fa-heart"></i></li>
+                                        <li><i class="icon_share"></i></li>
+                                    </ul>
+                                    <div class="follow">
+                                        <i class="icon_notifications"></i>
+                                        <p>متابعة</p>
+                                    </div>
+                                </div>
+                                <p class="ticket">الأكثر عرضا</p>
+                                <ul id="galary" class="galary">
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb  current" src="../resources/img/room_1.png" /><span>مشاهدة الصور</span></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_2.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_3.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_4.png" /></a></li>
+                                    <li onmouseover="changeImg(this)" onclick="changeImg(this)"><a><img class="thumb" src="../resources/img/room_1.png" /></a></li>                                    
+                                </ul>
+                            </div>
+                            <div class="res_content">
+                                <div class="res_state clearfix">
+                                    <div class="hotel_info">
+                                        <span class="info_name">منتجع ويسترن جاردن جدة</span>
+                                        <span class="info_rate">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="location_content clearfix">
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location_basic.svg"></span><span>
+                                                <input type="text" class="latValue hidden" value="21.422510" />
+                                                <input type="text" class="lngValue hidden" value="39.826168" />
+                                                <a class="mapshow" onclick="MapLinkClicked(this)">إعرض على الخريطة</a>
+                                                الشاطيء, جدة
+                                            </span>
+                                        </div>
+                                        <div class="location_info">
+                                            <span><img src="../resources/img/location.svg"></span><span><a>5 km</a>من الحرم المكي</span>
+                                        </div>
+                                    </div>
+                                    <div class="service_info">
+                                        <span>موقع جيد جدا</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="service_info service">
+                                        <span>إفطار مجاني</span>
+                                        <span>مواصلات قريبة</span>
+                                        <span>مواصلات قريبة</span>
+                                    </div>
+                                    <div class="more_service">
+                                        <img src="../resources/img/timer.svg">
+                                        <span>الأكثر مبيعا خلال <figure>48</figure> ساعة <figure>55</figure> مرة</span>                                        
+                                    </div>
+                                    <div class="price_info">
+                                        
+                                        <span>يبدأ سعر الليلة من <figure class="oldprice">1450</figure> <figure>1220&nbsp;</figure>&nbsp; + &nbsp;&nbsp;ضرائب و رسوم 300 </span>&nbsp;&nbsp;<figure class="new_currency">SAR</figure>
+                                        
+                                    </div>
+                                    <div class="reserve_info">
+                                       <a href="../pages/hotel.html">احجز</a>
+                                       <img src="../resources/img/timer.svg"><span>تم أخر حجز منذ <figure>44</figure> دقيقة</span>
+                                         
+                                    </div>
+                                    
+                                </div>
+                                <div class="separation clearfix"></div>
+                                <div class="evaluation clearfix">
+                                    <div class="main_eval">
+                                        <span onclick="evalShow(this)" onmouseout="evalhide(this)" onmouseover="evalShow(this)" class="eval">6.0</span><span><i class="evalIcon fa fa-angle-right"></i></span> 
+                                        <div class="evalcontainer hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInput hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafek"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInput hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="quality"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInput hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="price"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInput hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="clean"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInput hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="site"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInput hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValue">6.0</span></p>
+                                                    <div>
+                                                        <figure class="serve"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                    <p class="evalComment">جيد جداً</p>
+                                    <p class="evalNo">تقييم 145</p>
+                                    <div class="main_compare">                                        
+                                        <span onclick="compareShow(this)" onmouseout="comparehide(this)" onmouseover="compareShow(this)"  class="compare">
+                                            <p>أفضل من</p>
+                                            <p>95%</p>
+                                            <p>من عقارات المدينة</p>
+                                        </span>
+                                        <span><i class="compareIcon fa fa-angle-right"></i></span>
+                                        <div class="evalcontainercompare hidezero">
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="9" class="marafekInputcompare hidden" />
+                                                    <p><span class="evalItem">المرافق</span><span class="marafekValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="marafekcompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="8" class="qualityInputcompare hidden" />
+                                                    <p><span class="evalItem">جودة الغرف</span><span class="qualityValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="qualitycompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="7" class="priceInputcompare hidden" />
+                                                    <p><span class="evalItem">الجودة مقابل السعر</span><span class="priceValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="pricecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="evalpose">
+                                                <div>
+                                                    <input value="6" class="cleanInputcompare hidden" />
+                                                    <p><span class="evalItem">النظافة</span><span class="cleanValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="cleancompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="5" class="siteInputcompare hidden" />
+                                                    <p><span class="evalItem">الموقع</span><span class="siteValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="sitecompare"></figure>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input value="4" class="serveInputcompare hidden" />
+                                                    <p><span class="evalItem">الخدمة</span><span class="serveValuecompare">6.0</span></p>
+                                                    <div>
+                                                        <figure class="servecompare"></figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="discount">%خصم 30</p>
+                                    
+                                </div>
+                             
+                            </div>
+                            
+                        </div>
+                    </div>                    
+                </div>
+            </aside>            
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <footer class="footer wrapper">
+        <div class="clearfix">
+            <div class="footerContent flexy">
+                <div>
+                    <p class="omranabza"><a class="omranabza" href="#">نبذة عن عمرة.كوم</a></p>
+                </div>
+                <div>
+                    <p class="omranabza">قانوني</p>
+                    <span><a href="#">- &nbsp; الشروط و الأحكام</a></span>
+                    <span><a href="#">- &nbsp; سياسة الخصوصية</a></span>
+                </div>
+                <div class="callus">
+                    <p class="omranabza">الدعم</p>
+                    <span><a href="#">- &nbsp; اتصل بنا</a></span>
+                    <span><a href="#">- &nbsp; الأسئلة الشائعة</a></span>
+                    <span class="phone-no">- &nbsp; 968205841556+<img src="../resources/img/whatsapp.svg"></span>
+                    <span class="phone-no">- &nbsp; 968205841556+ <img src="../resources/img/callsvg.svg"></span>
+
+                    <div class="team">
+                        <span>فريقنا جاهز لمساعدتك على مدار الساعة</span>
+                        <p>15147</p>
+                        <span>أو يمكنك مراسلتنا على البريد الإلكتروني</span>
+                        <p>@omra.com</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <p class="omranabza">التواصل الاجتماعي</p>
+                    <div><a href="#"><i class="icon_facebook"></i><span>فيسبوك</span></a></div>
+                    <div><a href="#"><i class="icon_twitter"></i><span>تويتر</span></a></div>
+                    <div><a href="#"><i class="icon_insta"></i><span>انستقرام</span></a></div>
+                    <div><a href="#"><i class="icon_linkedin"></i><span>لينكدان</span></a></div>
+                    <div><a href="#"><i class="icon_snap"></i><span>سناب شات</span></a></div>
+                    <div><a href="#"><i class="icon_youtube"></i><span>يوتيوب</span></a></div>
+                </div>
+                <div class="phonephoto">
+                    <div><img class="mobile" src="../resources/img/mobile.png"></div>
+                    <div class="appstore">
+                        <a class="store" href="#"><img src="../resources/img/appstore.png"></a>
+                        <a class="store" href="#"><img src="../resources/img/googleplay.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="maincredit">
+                <div class="credit flexy">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                    <img src="../resources/img/credit.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copy wrapper">
+        <div class="copyright">
+            <p>حقوق الطبع و النشر 2019 - جميع الحقوق محفوظة لدى عمرة.كوم</p>
+        </div>
+    </div>
+    
+    
+    
+
+    <script src="../vendors/js/jquery-3.3.1.min.js"></script>
+    <script src="../vendors/js/jquery.min.js"></script>
+    <script src="../vendors/js/respond.min.js"></script>
+    <script src="../vendors/js/html5shiv.js"></script>
+    <script src="../vendors/js/selectivizr-min.js"></script>
+    <script src="../vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../vendors/js/moment.min.js"></script>
+    <script src="../vendors/js/daterangepicker.js"></script>   
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPaESzlKnYyvvuaUij3hmYKitejPUbOIM&callback=initMap">
+    </script>    
+    <script src="../resources/js/mainscript.js"></script>
+    <script>
+      
+        window.onload = function(){
+                NodeList.prototype.forEach = Array.prototype.forEach;
+                var offerInputs = document.querySelectorAll("input[type=datetime]").forEach(function (el) {
+                                if (!(el.value == null ||  el.value =="") ){
+                                     var deadline = el.value;
+                                     var countDownDate = new Date(deadline).getTime();
+                                     var x = setInterval(function() {                   
+                                                    var now = new Date().getTime();                 
+                                                    var distance = countDownDate - now;                  
+                                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);                   
+                                                    el.parentElement.querySelector('.offerTime').innerHTML = days + "d : " + hours + "h : " + minutes + "m : " + seconds + "s ";                   
+                                                    if (distance < 0) { 
+                                                        clearInterval(x);
+                                                        el.parentElement.classList.add('hidden');
+                                                    } }, 1000
+                                                   );
+
+
+                                }else {
+                                    el.parentElement.classList.add('hidden');
+                                }
+                       
+               });
+        }
+        
+</script>
+<script>
+    setInterval(function() {
+        window.location.reload();
+    }, 1200000);
+</script>
+<script>
+    document.getElementById('timer').innerHTML =
+        0024 + ":" + 00;
+    startTimer();
+
+    function startTimer() {
+        var presentTime = document.getElementById('timer').innerHTML;
+        var timeArray = presentTime.split(/[:]+/);
+        var m = timeArray[0];
+        var s = checkSecond((timeArray[1] - 1));
+        if (s == 59) {
+            m = m - 1
+        }
+        //if(m<0){alert('timer completed')}
+
+        document.getElementById('timer').innerHTML =
+            m + ":" + s;
+        console.log(m)
+        setTimeout(startTimer, 1000);
+    }
+
+    function checkSecond(sec) {
+        if (sec < 10 && sec >= 0) {
+            sec = "0" + sec
+        }; // add zero in front of numbers < 10
+        if (sec < 0) {
+            sec = "59"
+        };
+        return sec;
+    }
+</script>
+
+
+</body>
+    
+
+</html>

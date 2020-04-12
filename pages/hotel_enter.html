@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../vendors/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/customiconfont.css">
+   
+    <link rel="stylesheet" type="text/css" href="../resources/css/mainstyle_rtl.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap&subset=arabic" rel="stylesheet">
+
+    <title>hotel_enter</title>
+
+
+
+</head>
+    <body data-title="hotel_enter">    
+        <div id="chat">
+            
+        </div>
+        <header class="header" id="mainpage">
+            <div class="wrapper">
+                <div class="content clearfix">
+                    <div class="currency_language">
+                        <ul class="lang_chose">
+                            <li>
+                                <a href="#" class="choosemain" id="lang_menu">
+
+                                    <img class="lang_icon" src="../resources/img/custom_icon.png">
+                                    <input id="changing_language" type="text" value="اختر اللغة" readonly />
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="choosemain" id="currency_menu">
+                                    <img class="currency_icon" src="../resources/img/custom_icon.png">
+                                    <input id="changing_currency" type="text" value="اختر العملة" readonly />
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <div class="language hidden" id="menu_open">
+                                <div class="language_content">
+                                    <form>
+                                        <a id="arabic">العربية<img src="../resources/img/lang_icon_small_arabic.svg" /></a>
+                                        <a id="english">English <img src="../resources/img/lang_icon_small_english.svg" /></a>
+                                    </form>
+                                </div>
+                            </div>
+                        </ul>
+                        <div class="social">
+                            <ul class="">
+                                <li><a href="#"><i class="icon_facebook"></i></a></li>
+                                <li><a href="#"><i class="icon_twitter"></i></a></li>
+                                <li><a href="#"><i class="icon_insta"></i></a></li>
+                                <li><a href="#"><i class="icon_linkedin"></i></a></li>
+                                <li><a href="#"><i class="icon_snap"></i></a></li>
+                                <li><a href="#"><i class="icon_youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="currency hidden" id="menu_currency_open">
+                <div class="currency_content">
+                    <form>
+                        <div class="clearfix">
+                            <div class="currency_section">
+                                <a data-myval="SAR" onclick="choosecurrency(this)">SAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال سعودي</span></a>
+                                <a data-myval="USD$" onclick="choosecurrency(this)">USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار أمريكي</span></a>
+                                <a data-myval="AUD" onclick="choosecurrency(this)">AUD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار استرالي</span></a>
+                                <a data-myval="CAD" onclick="choosecurrency(this)">CAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار كندي</span></a>
+                                <a data-myval="$S" onclick="choosecurrency(this)">$S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار سنغافوري</span></a>
+                                <a data-myval="FJD" onclick="choosecurrency(this)">FJD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار فيجي</span></a>
+                                <a data-myval="NZD" onclick="choosecurrency(this)">NZD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار نيوزيلندي</span></a>
+                                <a data-myval="NAD" onclick="choosecurrency(this)">NAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار ناميبي</span></a>
+                                <a data-myval="$HK" onclick="choosecurrency(this)">$HK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دولار هونج كونج</span></a>
+                                <a data-myval="ZAR" onclick="choosecurrency(this)">ZAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>راند جنوب أفريقيا</span></a>
+                                <a data-myval="€ EURO" onclick="choosecurrency(this)">€&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>يورو </span></a>
+                                <a data-myval="GBP " onclick="choosecurrency(this)">£&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>جنيه استرليني</span></a>
+                                <a data-myval=".د.ك" onclick="choosecurrency(this)">.د.ك&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار كويتي</span></a>
+                                <a data-myval="BHD" onclick="choosecurrency(this)">BHD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار بحريني</span></a>
+                                <a data-myval="EGP" onclick="choosecurrency(this)">EGP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>جنية مصري</span></a>
+                            </div>
+
+                            <div class="currency_section">
+
+                                <a data-myval="AED" onclick="choosecurrency(this)">AED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>درهم اماراتي</span></a>
+                                <a data-myval="JOD" onclick="choosecurrency(this)">JOD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>دينار أردني</span></a>
+                                <a data-myval="TL" onclick="choosecurrency(this)">TL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>الليرة التركية</span></a>
+                                <a data-myval="CL$" onclick="choosecurrency(this)">CL$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>بيزو كولومبي</span></a>
+                                <a data-myval="KZT" onclick="choosecurrency(this)">KZT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>تينغ كازاخستاني</span></a>
+                                <a data-myval="RUB" onclick="choosecurrency(this)">RUB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبل روسي</span></a>
+                                <a data-myval="Rp" onclick="choosecurrency(this)">Rp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبية اندونيسي</span></a>
+                                <a data-myval=".RS" onclick="choosecurrency(this)">.RS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>روبيه هندي</span></a>
+                                <a data-myval="$R" onclick="choosecurrency(this)">$R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال برازيلي</span></a>
+                                <a data-myval="OMR" onclick="choosecurrency(this)">OMR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال عماني</span></a>
+                                <a data-myval="QAR" onclick="choosecurrency(this)">QAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ريال قطري</span></a>
+                                <a data-myval="MYR" onclick="choosecurrency(this)">MYR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>رينغيت ماليزي</span></a>
+                                <a data-myval="zł" onclick="choosecurrency(this)">zł&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>زلوتى بولندى</span></a>
+                                <a data-myval="₪" onclick="choosecurrency(this)">₪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>شيكل اسرائيلي</span></a>
+                                <a data-myval="CHF" onclick="choosecurrency(this)">CHF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>فرنك سويسري</span></a>
+
+                            </div>
+
+                            <div class="currency_section">
+
+                                <a data-myval="DKK" onclick="choosecurrency(this)">DKK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون دنماركي</span></a>
+                                <a data-myval="SEK" onclick="choosecurrency(this)">SEK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون سويدي</span></a>
+                                <a data-myval="NOK" onclick="choosecurrency(this)">NOK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كرون نرويجي</span></a>
+                                <a data-myval="Kč" onclick="choosecurrency(this)">Kč&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>كورون تشيكي</span></a>
+                                <a data-myval="GEL" onclick="choosecurrency(this)">GEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>لاري جورجي</span></a>
+                                <a data-myval="lei" onclick="choosecurrency(this)">BGN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليف بلغاري</span></a>
+                                <a data-myval="MDL" onclick="choosecurrency(this)">lei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليو روماني</span></a>
+                                <a data-myval="MDL" onclick="choosecurrency(this)">MDL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ليو مولدوفي</span></a>
+                                <a data-myval="AZN" onclick="choosecurrency(this)">AZN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>مانات أذربيجاني</span></a>
+                                <a data-myval="UAH" onclick="choosecurrency(this)">UAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>هريفنيا أوكراني</span></a>
+                                <a data-myval="KRW" onclick="choosecurrency(this)">KRW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>وون كوري</span></a>
+                                <a data-myval="¥" onclick="choosecurrency(this)">¥&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ين ياباني</span></a>
+                                <a data-myval="CNY" onclick="choosecurrency(this)">CNY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>يوان صيني</span></a>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header> 
+        <div class="hotelintro clearfix content">
+            <div class="hero">
+                <h1>مع عمره . كوم</h1>
+                <p>الطريقة الأسهل للوصول إلى جمهور عالمي</p>
+                <a href="../pages/hotel_signup.html" class="buttonfull registering">سجل عقارك</a>
+                <a href="../pages/hotel_signin.html" class="buttonfull registering">تسجيل الدخول</a>
+            </div>
+        </div>
+        
+        <div class="part reasons clearfix content">
+            <h1>أهم الأسباب التي تدفعك للاشتراكك بعمره . كوم</h1>
+            <div class="partflex">
+                <ul>
+                    <li><i class="fa fa-dot-circle-o"></i><span>دعم على مدار الساعة من موظفينا عبر الهاتف أو البريد الإلكتروني</span></li>
+                    <li><i class="fa fa-dot-circle-o"></i><span>تواجد قوي على محركات البحث لمزيد من الحجوزات</span></li>
+                    <li><i class="fa fa-dot-circle-o"></i><span>نصائح وتحليلات تساعدك على تحسين الأداء</span></li>
+                    <li><i class="fa fa-dot-circle-o"></i><span>دعم على مدار الساعة من موظفينا عبر الهاتف أو البريد الإلكتروني</span></li>
+                    <li><i class="fa fa-dot-circle-o"></i><span>تواجد قوي على محركات البحث لمزيد من الحجوزات</span></li>
+                    <li><i class="fa fa-dot-circle-o"></i><span>نصائح وتحليلات تساعدك على تحسين الأداء</span></li>
+                </ul>
+                <aside>
+                    <a><i class="fa fa-youtube-play"></i></a>
+                    <p>فيديو توضيحي لكيفية الاشتراك</p>
+                </aside>
+            </div>
+        </div>
+        <div class="part articles clearfix content">
+            <h1>رأي شركاؤنا</h1>
+            <div>               
+                <article>
+                    <h2>ويسترن جاردن </h2>
+                    <p>نظافة الفندق وهدوء الموقع طاقم الفندق رائعين ومتعاونينكل التقدير والاحترام لهم</p>
+                    <span>تم التقييم منذ 26/10</span>
+                </article>
+                
+                <article>
+                    <h2>ويسترن جاردن </h2>
+                    <p>نظافة الفندق وهدوء الموقع طاقم الفندق رائعين ومتعاونينكل التقدير والاحترام لهم</p>
+                    <span>تم التقييم منذ 26/10</span>
+                </article>
+                
+                 <article>
+                    <h2>ويسترن جاردن </h2>
+                    <p>نظافة الفندق وهدوء الموقع طاقم الفندق رائعين ومتعاونينكل التقدير والاحترام لهم</p>
+                    <span>تم التقييم منذ 26/10</span>
+                </article>
+                
+            </div>
+        </div>
+        <section class="omraStatPlace wrapper">
+            <div class="clearfix content">
+                <div class="container omracontainer">
+                    <p class="bestOffers sectiontitle omrastatistics">إحصائيات عمرة.كوم لأماكن الإقامة</p>
+                </div>
+            </div>
+            <div class="omracontainer">
+                <div class="newwrap">
+                    <div class="content flexbase">
+                        <div class="flex">
+                            <div class="circle">
+                              <p class="statsomra counting" data-count="15872">0</p>
+                              <p class="desc">غرفة حجزت</p>
+                            </div>
+                            
+                        </div>
+                        <div class="flex">
+                            <div class="circle">
+                                <p class="statsomra counting" data-count="15872">0</p>
+                                <p class="desc">جناح حجز</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="circle">
+                                <p class="statsomra  counting" data-count="15872">0</p>
+                                <p class="desc">شقة حجزت</p>                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="separate wrapper">
+            <div class="clearfix content">
+                <a>مع عمره . كوم</a><span>الطريقة الأسهل للوصول إلى جمهور عالمي</span>
+            </div>
+        </section>
+        
+        
+        <section class="omraStatPlace omraStatPerson  wrapper">
+            <div class="clearfix content">
+                <div class="container omracontainer">
+                    <p class="bestOffers sectiontitle omrastatistics">إحصائيات عمرة.كوم لحجوزات الضيوف</p>
+                </div>
+            </div>
+            <div class="omracontainer">
+                <div class="newwrap">
+                    <div class="content flexbase">
+                        <div class="flex">
+                            <div class="circle">
+                              <p class="statsomra counting" data-count="15872">0</p>
+                              <p class="desc">فرد</p>
+                            </div>
+                            
+                        </div>
+                        <div class="flex">
+                            <div class="circle">
+                                <p class="statsomra counting" data-count="15872">0</p>
+                                <p class="desc">مجموعة</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="circle">
+                                <p class="statsomra counting" data-count="15872">0</p>
+                                <p class="desc">عائلة</p>                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="part finance clearfix content">
+            <h1>الأسعار و العمولة</h1>
+            <div>
+                <article class="financeInfo">
+                    <p>يعتمد نظام التسعير لدينا على تعيينك للسعر الذي سيدفعه الضيوف. نحن لا نضيف أي رسوم أخرى</p>
+                    <ul>
+                        <li><i class="fa fa-dot-circle-o"></i><span>دعم على مدار الساعة من موظفينا عبر الهاتف أو البريد الإلكتروني</span></li>
+                        <li><i class="fa fa-dot-circle-o"></i><span>تواجد قوي على محركات البحث لمزيد من الحجوزات</span></li>
+                        <li><i class="fa fa-dot-circle-o"></i><span>نصائح وتحليلات تساعدك على تحسين الأداء</span></li>
+                    </ul>
+                   
+                </article>                
+                <article class="financeCount">
+                    <h3>الأسعار والعمولة </h3>
+                    <ul>
+                        <li class="clearfix"><input type="number" value="300"><span>السعر الخاص بك لليلة الواحدة</span></li>
+                        <li class="clearfix"><figure>300 <s class="prices">SAR</s></figure><span>السعر الذي يدفعه الضيوف لليلة الواحدة</span></li>
+                        <li class="clearfix"><figure>300 <s class="prices">SAR</s></figure><span>العمولة مشمولة في السعر الذي يدفعه الضيوف</span></li>
+                        <li class="clearfix"><figure>300 <s class="prices">SAR</s></figure><span>إيراداتك في الليلة الواحدة</span></li>
+                        <li class="clearfix"><figure>300 <s class="prices">SAR</s></figure><span>إيراداتك المحتملة شهرياً </span></li>
+                       
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <div class="part questions clearfix content">
+            <h1>الأسئلة الشائعة</h1>
+            <div>
+                <article>
+                    <a>
+                        <p>ماذا يحدث في حالة حدوث تلفيات في مكان الإقامة بسبب الضيف؟</p>
+                        <span>يمكن لمالك مكان الإقامة طلب تأمين ضد التلفيات من الضيوف. يساعد مبلغ التأمين على تغطية أي تلفيات محتملة قد يسببها الضيف وذلك لضمان التعامل مع مكان الإقامة الخاص بك باحترام. يمكنك إبلاغ موظفينا في حال وقوع أي حادث من خلال ميزة الإبلاغ عن سوء السلوك.</span>
+                    </a>
+                </article>
+                <article>
+                    <a>
+                        <p>ماذا يحدث في حالة حدوث تلفيات في مكان الإقامة بسبب الضيف؟</p>
+                        <span>يمكن لمالك مكان الإقامة طلب تأمين ضد التلفيات من الضيوف. يساعد مبلغ التأمين على تغطية أي تلفيات محتملة قد يسببها الضيف وذلك لضمان التعامل مع مكان الإقامة الخاص بك باحترام. يمكنك إبلاغ موظفينا في حال وقوع أي حادث من خلال ميزة الإبلاغ عن سوء السلوك.</span>
+                    </a>
+                </article>
+                <article>
+                    <a>
+                        <p>ماذا يحدث في حالة حدوث تلفيات في مكان الإقامة بسبب الضيف؟</p>
+                        <span>يمكن لمالك مكان الإقامة طلب تأمين ضد التلفيات من الضيوف. يساعد مبلغ التأمين على تغطية أي تلفيات محتملة قد يسببها الضيف وذلك لضمان التعامل مع مكان الإقامة الخاص بك باحترام. يمكنك إبلاغ موظفينا في حال وقوع أي حادث من خلال ميزة الإبلاغ عن سوء السلوك.</span>
+                    </a>
+                </article>
+                <article>
+                    <a>
+                        <p>ماذا يحدث في حالة حدوث تلفيات في مكان الإقامة بسبب الضيف؟</p>
+                        <span>يمكن لمالك مكان الإقامة طلب تأمين ضد التلفيات من الضيوف. يساعد مبلغ التأمين على تغطية أي تلفيات محتملة قد يسببها الضيف وذلك لضمان التعامل مع مكان الإقامة الخاص بك باحترام. يمكنك إبلاغ موظفينا في حال وقوع أي حادث من خلال ميزة الإبلاغ عن سوء السلوك.</span>
+                    </a>
+                </article>
+                
+               
+               
+            </div>
+        </div>
+        
+        
+        
+        
+        <footer class="footer wrapper">
+            <div class="clearfix">
+                <div class="footerContent flexy">
+                    <div>
+                        <p class="omranabza"><a class="omranabza" href="#">نبذة عن عمرة.كوم</a></p>
+                    </div>
+                    <div>
+                        <p class="omranabza">قانوني</p>
+                        <span><a href="#">- &nbsp; الشروط و الأحكام</a></span>
+                        <span><a href="#">- &nbsp; سياسة الخصوصية</a></span>
+                    </div>
+                    <div class="callus">
+                        <p class="omranabza">الدعم</p>
+                        <span><a href="#">- &nbsp; اتصل بنا</a></span>
+                        <span><a href="#">- &nbsp; الأسئلة الشائعة</a></span>
+                        <span class="phone-no">- &nbsp; 968205841556+<img src="../resources/img/whatsapp.svg"></span>
+                        <span class="phone-no">- &nbsp; 968205841556+ <img src="../resources/img/callsvg.svg"></span>
+
+                        <div class="team">
+                            <span>فريقنا جاهز لمساعدتك على مدار الساعة</span>
+                            <p>15147</p>
+                            <span>أو يمكنك مراسلتنا على البريد الإلكتروني</span>
+                            <p>@omra.com</p>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <p class="omranabza">التواصل الاجتماعي</p>
+                        <div><a href="#"><i class="icon_facebook"></i><span>فيسبوك</span></a></div>
+                        <div><a href="#"><i class="icon_twitter"></i><span>تويتر</span></a></div>
+                        <div><a href="#"><i class="icon_insta"></i><span>انستقرام</span></a></div>
+                        <div><a href="#"><i class="icon_linkedin"></i><span>لينكدان</span></a></div>
+                        <div><a href="#"><i class="icon_snap"></i><span>سناب شات</span></a></div>
+                        <div><a href="#"><i class="icon_youtube"></i><span>يوتيوب</span></a></div>
+                    </div>
+                    <div class="phonephoto">
+                        <div><img class="mobile" src="../resources/img/mobile.png"></div>
+                        <div class="appstore">
+                            <a class="store" href="#"><img src="../resources/img/appstore.png"></a>
+                            <a class="store" href="#"><img src="../resources/img/googleplay.png"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="maincredit">
+                    <div class="credit flexy">
+                        <img src="../resources/img/credit.png">
+                        <img src="../resources/img/credit.png">
+                        <img src="../resources/img/credit.png">
+                        <img src="../resources/img/credit.png">
+                        <img src="../resources/img/credit.png">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copy wrapper">
+            <div class="copyright">
+                <p>حقوق الطبع و النشر 2019 - جميع الحقوق محفوظة لدى عمرة.كوم</p>
+            </div>
+        </div>
+
+        <script src="../vendors/js/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="../vendors/js/jquery.min.js"></script>
+        <script src="../vendors/js/respond.min.js"></script>
+        <script src="../vendors/js/html5shiv.js"></script>
+        <script src="../vendors/js/selectivizr-min.js"></script>
+        <script src="../vendors/js/jquery.waypoints.min.js"></script>
+        <script src="../vendors/js/moment.min.js"></script>
+        <script src="../vendors/js/daterangepicker.js"></script>
+        <script src="../resources/js/mainscript.js"></script>
+    </body>
+</html>

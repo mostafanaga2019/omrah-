@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../vendors/css/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+   
+   
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap&subset=arabic" rel="stylesheet">
+    <style>
+/*        rtl style    */
+        
+        @font-face {
+            font-family: 'sans';
+            src: url('../fonts/TheSans-Plain.otf');
+
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+
+        }
+
+
+        .clearfix {
+            zoom: 1;
+          
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+
+        html,
+        body {
+            background-color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            overflow-x: hidden; //horizontal
+            overflow-y: scroll; //vertical
+        }
+
+        
+      
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            -webkit-text-fill-color: #029893 !important;
+            -webkit-text-font-family: 'cairo' !important;
+            
+            
+        }
+        input:focus{
+            outline: none;
+        }
+
+        .signup-container {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0), rgba(0, 0, 0, .3)), url(../resources/css/img/omrah_bg-01.jpg);
+            background-position: center;
+            background-size: cover;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        
+        .loginHotelBox{
+           display: flex;
+           flex-direction: row-reverse;
+           justify-content: space-between;           
+           height: 725px;
+           width: 1300px;
+           background-color: #fff;
+           border-radius: 40px;
+           box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+          
+        }
+        .loginHotelBox .hotel_right img{
+            height: 725px;
+            border-top-right-radius: 40px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 40px;
+            border-bottom-left-radius: 0px;
+        }
+        .loginHotelBox .hotel_left{
+            width: 800px;
+        }
+        .loginHotelBox .hotel_left .myCenter{
+            width: 525px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            justify-content: center;
+            align-items: flex-end;
+            
+        }
+        .loginHotelBox .hotel_left .myCenter p{
+            font-size: 18px;
+            position: relative;
+            margin-bottom: 70px;
+        }
+        
+        .loginHotelBox .hotel_left .myCenter p:after{
+            position: absolute;
+            content: "";
+            width: 25px;
+            height: 5px;
+            background-color: #5eb65c;
+            border-radius:5px;
+            top: 125%;
+            right: 0;            
+        }
+       
+        
+       
+        .loginHotelBox .hotel_left .logoColored{
+            width: 200px;
+            margin-bottom: 40px;
+        }
+        
+         .loginHotelBox .hotel_left .newInput{
+            position: relative;
+             text-align: right;            
+             margin-bottom: 26px;
+            
+        }
+        
+         .loginHotelBox .hotel_left .myCenter .newInput span{
+            font-size: 11px;
+            color: red;
+            position: absolute;
+            width: 100%;
+            right: 30px;
+            top: 100%;
+        }        
+       
+        .loginHotelBox .hotel_left .newInput  img{
+            width: 30px;
+            position: absolute;
+            top: 0%;
+            right: 20px;
+            transform: translate(0,50%);
+            cursor: default;
+        }
+        
+        .loginHotelBox .hotel_left .newInput  input,  .loginHotelBox .hotel_left a {
+            width: 525px;
+            height: 60px;
+            border-radius: 30px;
+            border: 1px solid #029893;
+            padding-right: 60px;
+            direction: rtl;
+            background: transparent; 
+        }
+        
+       
+        .loginHotelBox .hotel_left .newInput input::placeholder{
+            font-size: 18px;
+        }
+        
+        .loginHotelBox .hotel_left  a{
+            display: inline-block;
+            text-align: center;
+            line-height: 60px;
+            padding: 0;
+            border: none;
+            background-color: #029893;
+            color: #fff;
+            cursor: pointer;
+        }
+        .loginHotelBox .hotel_left .newcheck{
+           
+            margin-bottom: 30px;
+        }
+        .loginHotelBox .hotel_left .newcheck label{
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;           
+            color: #e0c201;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .loginHotelBox .hotel_left .newcheck label span{
+            padding-right: 40px;
+        }
+        .loginHotelBox .hotel_left .newcheck input{
+            width: 0px;
+            height: 0px;
+            position: relative;
+            
+           
+           
+           
+        }
+        .loginHotelBox .hotel_left .newcheck input::after{
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 1px solid #e0c201;
+            content: '';
+            color: #e0c201 ;
+            font-weight: 600;
+            line-height: 22px;
+            text-align: center;
+            border-radius: 5px;
+            top: -11px;
+            right: 5px;
+            cursor: pointer
+        }
+        .loginHotelBox .hotel_left .newcheck .checkme::after{
+           content: '\2713';
+        }
+       
+        .error {
+            border-color: red !important;
+        }
+        
+        @media only screen and (max-width: 1400px) {
+            .loginHotelBox{
+                height: 725px;
+                width: 1150px;
+            }
+            
+            .loginHotelBox .hotel_left{
+            width: 800px;
+            }
+
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .loginHotelBox{
+                height: 725px;
+                width: 725px;
+            }
+            .loginHotelBox .hotel_right{
+                display: none
+            }
+             .loginHotelBox .hotel_left{
+            width: 725px;
+            }
+
+           
+        }
+
+/*        ltr style               */
+        
+         @font-face {
+            font-family: 'sans';
+            src: url('../fonts/TheSans-Plain.otf');
+
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+
+        }
+
+
+        .clearfix {
+            zoom: 1;
+           
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+
+        html,
+        body {
+            background-color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            overflow-x: hidden; //horizontal
+            overflow-y: scroll; //vertical
+        }
+
+        
+      
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            -webkit-text-fill-color: #029893 !important;
+            -webkit-text-font-family: 'cairo' !important;
+            
+            
+        }
+        input:focus{
+            outline: none;
+        }
+
+        .signup-container {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0), rgba(0, 0, 0, .3)), url(../resources/css/img/omrah_bg-01.jpg);
+            background-position: center;
+            background-size: cover;   
+            display: flex;            
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        
+        .loginHotelBox{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;           
+           height: 725px;
+           width: 1300px;
+           background-color: #fff;
+           border-radius: 40px;
+           box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+          
+        }
+        .loginHotelBox .hotel_right img{
+            height: 725px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 0px;
+        }
+        .loginHotelBox .hotel_left{
+            width: 800px;
+        }
+        .loginHotelBox .hotel_left .myCenter{
+            width: 525px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            justify-content: center;
+            align-items: flex-start;
+            
+        }
+        .loginHotelBox .hotel_left .myCenter p{
+            font-size: 18px;
+            position: relative;
+            margin-bottom: 70px;
+        }
+        
+        .loginHotelBox .hotel_left .myCenter p:after{
+            position: absolute;
+            content: "";
+            width: 25px;
+            height: 5px;
+            background-color: #5eb65c;
+            border-radius:5px;
+            top: 125%;
+            left: 0;            
+        }
+       
+        
+       
+        .loginHotelBox .hotel_left .logoColored{
+            width: 200px;
+            margin-bottom: 40px;
+        }
+        
+         .loginHotelBox .hotel_left .newInput{
+            position: relative;
+             text-align: left;            
+             margin-bottom: 26px;
+            
+        }
+        
+         .loginHotelBox .hotel_left .myCenter .newInput span{
+            font-size: 11px;
+            color: red;
+            position: absolute;
+            width: 100%;
+            left: 30px;
+            top: 100%;
+        }        
+       
+        .loginHotelBox .hotel_left .newInput  img{
+            width: 30px;
+            position: absolute;
+            top: 0%;
+            left: 20px;
+            transform: translate(0,50%);
+            cursor: default;
+        }
+        
+        .loginHotelBox .hotel_left .newInput  input,  .loginHotelBox .hotel_left a {
+            width: 525px;
+            height: 60px;
+            border-radius: 30px;
+            border: 1px solid #029893;
+            padding-left: 60px;
+            direction: ltr;
+            background: transparent; 
+        }
+        
+       
+        .loginHotelBox .hotel_left .newInput input::placeholder{
+            font-size: 18px;
+        }
+        
+        .loginHotelBox .hotel_left  a{
+            display: inline-block;
+            text-align: center;
+            line-height: 60px;
+            padding: 0;
+            border: none;
+            background-color: #029893;
+            color: #fff;
+            cursor: pointer;
+        }
+        .loginHotelBox .hotel_left .newcheck{
+           
+            margin-bottom: 30px;
+        }
+        .loginHotelBox .hotel_left .newcheck label{
+            cursor: pointer;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;           
+            color: #e0c201;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .loginHotelBox .hotel_left .newcheck label span{
+            padding-left: 40px;
+        }
+        .loginHotelBox .hotel_left .newcheck input{
+            width: 0px;
+            height: 0px;
+            position: relative;
+            
+           
+           
+           
+        }
+        .loginHotelBox .hotel_left .newcheck input::after{
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 1px solid #e0c201;
+            content: '';
+            color: #e0c201 ;
+            font-weight: 600;
+            line-height: 22px;
+            text-align: center;
+            border-radius: 5px;
+            top: -11px;
+            left: 5px;
+            cursor: pointer
+        }
+        .loginHotelBox .hotel_left .newcheck .checkme::after{
+           content: '\2713';
+        }
+       
+        .error {
+            border-color: red !important;
+        }
+
+
+
+
+
+        @media only screen and (max-width: 1400px) {
+            .loginHotelBox{
+                height: 725px;
+                width: 1150px;
+            }
+            
+            .loginHotelBox .hotel_left{
+            width: 800px;
+            }
+
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .loginHotelBox{
+                height: 725px;
+                width: 725px;
+            }
+            .loginHotelBox .hotel_right{
+                display: none
+            }
+             .loginHotelBox .hotel_left{
+            width: 725px;
+            }
+
+           
+        }
+
+       
+    </style>
+
+
+    <title>Omrah_signin</title>
+</head>
+
+<body data-title="Omrah_signin">
+
+
+    <div class="signup-container">
+        <div class="loginHotelBox">
+            <div class="hotel_right">
+             <img src="../resources/img/omrah_hotelRight.png">
+            </div>
+            <div class="hotel_left">
+                <div class="myCenter">
+                    <img class="logoColored" src="../resources/img/logo_colored.png">
+                    <p>سجل دخولك الآن لتتمكن من الوصول لنظامك</p>
+                    <div class="newInput">
+                        <input  onkeyup="namecheck(this)"  type="text" placeholder="اسم المستخدم">
+                        <img src="../resources/img/userhotelicon.svg">
+                        <span>رجاء ادخال البيانات بشكل سليم</span>
+                    </div>
+                    <div class="newInput">
+                        <input onkeyup="passcheck(this)" type="password" placeholder="كلمة المرور">
+                        <span>رجاء ادخال البيانات بشكل سليم</span>
+                        <img src="../resources/img/passwordHotelicon.svg">
+                    </div>
+                    <div class="newcheck">
+                        <label onclick="checkinput()" for="remCheck">
+                            <span>تذكرني</span>
+                            <input id="remCheck" type="checkbox">
+                        </label>
+                    </div>
+                    <div >
+                        <a>تسجيل دخول</a>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+    </div>
+
+
+
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <script>
+        function checkinput(){
+            if ($('#remCheck').is(':checked')){
+                   $('#remCheck').removeClass('checkme');
+                   $('#remCheck').attr('checked' , false);
+            }else{
+                   $('#remCheck').addClass('checkme');
+                   $('#remCheck').attr('checked' , true);
+                }
+            
+           
+
+        }
+        
+    
+
+
+    
+
+    function passcheck(el) {
+        (el.value == "" || el.value == null || el.value.length < 8) ? $(el).addClass('error'): $(el).removeClass('error');
+    }
+        
+    function namecheck(el) {
+            (el.value == "" || el.value == null) ? $(el).addClass('error'): $(el).removeClass('error');
+        }
+
+
+
+    
+
+
+
+
+
+    
+
+      
+    </script>
+
+
+</body>
+
+</html>

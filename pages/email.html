@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../vendors/css/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/customiconfont.css">    
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap&subset=arabic" rel="stylesheet">
+    <style>
+
+        
+        @font-face {
+            font-family: 'sans';
+            src: url('../fonts/TheSans-Plain.otf');
+
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+
+        }
+
+
+        .clearfix {
+            zoom: 1;
+          
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+
+        html,
+        body {
+            background-color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            overflow-x: hidden; //horizontal
+            overflow-y: scroll; //vertical
+        }
+        
+        .content {
+        max-width: 1400px;
+        min-width: 768px;
+        margin: 0px auto;
+        text-align: center;
+            
+        }
+        .newWrap{
+            height: 300px;
+            background-image: url(../resources/css/img/mailbg.png);
+            background-position: center;
+            background-size: cover;
+            
+        }
+        .img_cont{
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.06);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            margin-top:-10vw;
+            margin-bottom: 30px;
+            
+        }
+        .img_cont:after{
+            z-index: -1;
+            width: 125%;
+            height: 125%;
+            display: block;
+            content: "";
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            position: absolute;
+            
+            
+        }
+        img.logo{
+            width: 75%;
+        }
+/*                  background-image: linear-gradient(#029893,#5EB65C)*/
+        h2{
+            color: #029893;            
+            position: relative;
+            width: fit-content;
+            width: -moz-fit-content;
+            margin: 40px auto 60px auto;
+        }
+        h2::after{
+            position: absolute;
+            content: "";
+            display: block;
+            width: 30%;
+            height: 3px;
+            background-color: #029893;
+            top: 130%;
+            left: 50%;
+            transform: translate(-50%);
+            
+        }
+        h3{
+            width: 80%;
+            margin: 40px auto;
+            color: #474747;   
+            border-radius: 19px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.09);
+            padding: 30px;
+            border: solid 1px rgba(2, 152, 147, 0.41);
+            background-color: #fff;
+            font-size: 1em;
+        }
+        section div{
+            direction: rtl;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto 30px auto;
+            color: #474747;   
+            border-radius: 19px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.09);
+            padding: 30px;            
+            border-right: 20px solid  #029893;
+            border-left: 20px solid  #029893;
+            border-bottom: 1px solid #5EB65C;
+            border-top: 1px solid #5EB65C;
+            background-color: #fff;
+            font-size: 1em;
+            
+        }
+        p{
+            font-weight: 600;
+           
+        }
+        
+        a.confirm{
+            display: block;
+            padding: 15px;
+            line-height: 1.2em;
+            width: 250px;            
+            margin: 0 auto;
+            border-radius: 35px;
+            background-image: linear-gradient(to bottom, #029893, #5EB65C 233%);
+            margin-bottom: 30px;
+            color: #fff;
+            cursor: pointer;
+            -webkit-transition-duration: 500ms;
+            -webkit-transition-property: all;
+        }
+        a.confirm:hover{
+            color:#ffde0a
+        }
+        figure{                 
+            background-color: #029893;
+            font-weight: 700;
+            padding: 15px;
+            width: fit-content;            
+            width: -moz-fit-content;
+            margin: 10px auto;
+            color: #fff;
+            cursor: pointer;
+            -webkit-transition-duration: 500ms;
+            -webkit-transition-property: all;;
+            border-radius: 10px;
+        }
+        figure:hover{
+            color: #ffde0a;
+            
+        }
+        span{
+            color: #e8c900
+        }
+        ul{
+            margin-bottom: 30px;
+        }
+        ul li{
+            display: inline-block;
+            margin: 20px;
+           
+        }
+        ul li a{
+            font-size: 30px;
+            color: #029893;
+            cursor: pointer;
+            -webkit-transition-duration: 500ms;
+            -webkit-transition-property: all;;
+        }
+        ul li a:hover{
+            color: #ffde0a;            
+            
+        }
+        article{
+            font-size: 10px;
+            margin: 0;
+            line-height: 15px;
+            color: #a7a6a6;
+            
+        }
+        .copy{
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <title>email</title>
+    
+</head>
+
+<body>
+    <div class="newWrap"></div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="img_cont">
+                <img class="logo" src="../resources/img/omra_logo_black.svg">
+            </div>
+            <h2>شكرا لانضمامك إلى عمرة.كوم</h2>
+            <h3>أصبحت الآن جزءاً من أكبر منصة لأماكن الإقامة في العالم، ويسعدنا وجودك معنا. نعلم أنه قد يكون لديك بعض الأسئلة، لذلك أعددنا لك بعض المصادر لمساعدتك على البدء </h3>
+            <section>
+                <div>
+                    <p> يمكنك تسجيل الدخول باستخدام عنوان بريدك الإلكتروني</p>
+                    <span>( midoafgbjkm@gmail.com )</span>
+                    <p> وكلمة المرور التي أنشأتها</p>
+                    <span>( midoafgbjkm_gmail )</span>
+                </div>
+                <a class="confirm">حسابي</a>
+            </section>
+            <section> 
+                <div>
+                    <p>لقد قمت بطلب لاستعادة كلمة المرور .. فضلا قم بزيارة الرابط التالي لإكمال طلبك </p>
+                    <span>مدة الرابط 24 ساعة</span>
+                </div>
+                <a  class="confirm">استعادة كلمة المرور</a>
+            </section>
+            <section>
+                <div>                    
+                    <p>سافر في أي وقت و احجز اليوم </p>
+                    <p>لايوجد حد أدنى للإنفاق</p>
+                   
+                    <p><span>استخدم كود</span><figure>عمرة.هومز</figure><span>عند حجزك اونلاين</span></p>
+                </div>
+                <a  class="confirm">استخدم الكوبون</a>
+                
+            </section>
+            <section>
+                <div>
+                    <p>أفضل خصومات على جميع فنادق الحرم المكي و المدني</p>
+                    <p>لدينا أسعار ممتازة محددة المدة و خصومات هائلة</p>
+                    <p><span>استخدم كود</span><figure> عمرة </figure><span>عند حجزك اونلاين</span></p>
+                </div>
+                <a  class="confirm">استخدم الكوبون</a>
+            </section>
+            <section>
+                <div>
+                    <p> أفضل خصومات على جميع فنادق الحرم المكي و المدني لدى عمرة.هومز</p>
+                    <p>لدينا أسعار ممتازة محددة المدة و خصومات هائلة</p>                  
+                </div>
+                <a  class="confirm">شاهد أفضل عروضنا</a>
+            </section> 
+        </div>
+        <div class="content copy">
+            <ul class="social">
+                <li><a><i class="icon_facebook"></i></a></li>
+                <li><a><i class="icon_twitter"></i></a></li>
+                <li><a><i class="icon_youtube"></i></a></li>
+                <li><a><i class="icon_insta"></i></a></li>
+            </ul>
+            <article>Copyright @ 2020 Omrah. All right reserved</article>
+            <article>Address - Makka - Kindom Saudi Arabia</article>
+            <article>This email has been sent to members who has requested to join the mailing list.</article>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>
